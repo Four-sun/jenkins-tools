@@ -132,9 +132,11 @@ function scp_implement(){
 git_repo=""
 project=${project//,/ };
 arr=($project);
+server=${server//,/ };
+server_arr=($server);
 for each in ${arr[*]}
 do
- 	  project=`echo ${each} |sed 's/\"//g' `
+ 	  project=`echo ${each} | sed 's/\"//g' `
 	  echo "$group & ${project}"
     git_repo="http://gitlab.prod.dtstack.cn/${group}"
 
@@ -144,12 +146,19 @@ do
     echo "========STEP2:检查文件SQL文件========"
     check_increment_sql
 
-    echo "========STEP3:执行post_deploy.sh文件插入SQL========"
-    action_sql
+    echo "========STEP3:检查Server发布环境========"
+    for server_each in ${server_arr[*]} ; do
 
-    echo "========STEP4:检查SQL是否插入========"
-    scp_implement
+      server=`echo ${server_each} | sed 's/\"//g' `
+      echo "Server发布地址："$server
+
+      echo "========STEP4:执行post_deploy.sh文件插入SQL========"
+      action_sql
+
+      echo "========STEP5:检查SQL是否插入========"
+      scp_implement
+
+    done
 
 done
-
 
