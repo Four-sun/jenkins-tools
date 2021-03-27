@@ -12,7 +12,7 @@ diskSpace(){
 	do
     	echo "当前检查磁盘IP地址：$diskSpace_IP"
     	echo "请选择您要查看的磁盘空间："
-    	if [ $diskSpace_IP == "172.16.21.54" ] || [ $diskSpace_IP == "172.16.23.236" ]; then
+    	if [[ $diskSpace_IP == "172.16.21.54" ]] || [[ $diskSpace_IP == "172.16.23."* ]]; then
           disk_path="/dev/vda3"
       else
           disk_path="/dev/mapper"
