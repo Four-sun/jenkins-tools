@@ -81,6 +81,8 @@ function check_increment_sql(){
         cd ${WORKSPACE}/${project}/uic-web/sql/increment
     elif [[ ${project} = "DAGScheduleX" ]]; then
         cd ${WORKSPACE}/${project}/sql/4.0
+    elif [[ ${project} = "dt-center-dataScience" && ${feature_branch} = "test_4.2.x" ]]; then
+        cd ${WORKSPACE}/${project}/sql/increment/4.2.0
     else
         cd ${WORKSPACE}/${project}/sql/increment
     fi

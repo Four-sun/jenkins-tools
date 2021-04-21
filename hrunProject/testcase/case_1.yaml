@@ -1,0 +1,14 @@
+config:
+    name: UIC login case
+    request:
+        base_url: http://uic.insight.net/uic/api/v2/account
+
+- test:
+    name: step 1
+    request:
+        url: /login
+        method: POST
+        params:
+            username: admin@dtstack.com
+            password: admin123
+            verify_code: 0000
