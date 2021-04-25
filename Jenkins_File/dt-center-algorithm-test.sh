@@ -58,7 +58,7 @@ server_ip(){
 }
 
 algorithm_path(){
-  if [[ $Publish_IP == "172.16.23."* ]]; then
+  if [[ $IP == "172.16.23."* ]] ; then
       algorithm_path="/opt/dtstack/DTAiworks"
   else
       if [[ $krbt_env = "true" ]] && [[ $Kerberos_server =~ $IP ]]; then
@@ -92,7 +92,7 @@ sshpass -f ${PASSWD_HOME} ssh admin@$IP << remotessh
 
   echo '复制jar包'
   if [[ $krbt_env = "true" ]] && [[ $Kerberos_server =~ $IP ]] ; then
-    if [[ -d $algorithm_path/$temp_name ]]; then
+    if [ -d $algorithm_path/$temp_name ]; then
         echo '文件夹存在则删除文件'
         sudo rm -rf $algorithm_path/$temp_name/*
     else
@@ -103,7 +103,7 @@ sshpass -f ${PASSWD_HOME} ssh admin@$IP << remotessh
     echo 'kerberos环境修改hdfs权限'
     sudo chown -R hdfs:hdfs $algorithm_path/$temp_name
   else
-    if [[ -d $algorithm_path/$temp_name ]]; then
+    if [ -d $algorithm_path/$temp_name ]; then
         echo '文件夹存在则删除文件'
         rm -rf $algorithm_path/$temp_name/*
     else
