@@ -27,17 +27,26 @@ function clean_project(){
 	done
 }
 
-function engine_clean() {
+function other_clean() {
 
     echo `find /home/admin/app/dt-center-engine/logs/rdos_*-*.log -maxdepth 1  -type f` >> $clean_log
 
     find /home/admin/app/dt-center-engine/logs/rdos_*-*.log -maxdepth 1  -type f  | xargs rm -rf
 
+    echo `find /home/admin/app/dt-center-tagapp/logs/*-*-*.log -maxdepth 1  -type f` >> $clean_log
+
+    find /home/admin/app/dt-center-tagapp/logs/*-*-*.log -maxdepth 1  -type f  | xargs rm -rf
+
+    echo `find /home/admin/app/dt-uic/logs/*-*-*.log -maxdepth 1  -type f` >> $clean_log
+
+    find /home/admin/app/dt-uic/logs/*-*-*.log -maxdepth 1  -type f  | xargs rm -rf
+
 }
+
 
 echo "清理日志文件"
 
-engine_clean
+other_clean
 
 clean_project
 
