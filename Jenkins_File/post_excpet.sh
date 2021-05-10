@@ -21,4 +21,3 @@ expect "mysql&gt;"
 send "quit;\r"
 
 expect eof
-

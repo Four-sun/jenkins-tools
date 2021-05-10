@@ -34,12 +34,12 @@ implement_log="/home/admin/temp/implement.log"
 
 echo "$MYSQL_BASE $PROJECT $incremen_sql"
 import_sql(){
-echo "" > $implement_log
+cd '/home/admin/temp/'
 $MYSQL -e "tee $implement_log; select SCHEMA_NAME from information_schema.SCHEMATA where SCHEMA_NAME = '$MYSQL_BASE'" >> $implement_log
 database=`grep -wq "$MYSQL_BASE" implement.log && echo "yes" || echo "no"`
 if [ "$database" = "yes" ]; then
         echo "init $MYSQL_BASE " >> $implement_log
-        sh post_expect.sh $increment_path $MYSQL_BASE
+        ./post_expect.sh $increment_path $MYSQL_BASE
         echo "增量SQL执行结束" >> $implement_log
 else
         echo "ERROR(1001) 请检查MYSQL_DATABASE是否填写正确" >> $implement_log
