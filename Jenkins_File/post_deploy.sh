@@ -32,8 +32,10 @@ increment_sql="$6"
 increment_path="/home/admin/temp/increment/$PROJECT/$increment_sql"
 implement_log="/home/admin/temp/implement.log"
 
-echo "$MYSQL_BASE $PROJECT $incremen_sql"
+
 import_sql(){
+echo "" > $implement_log
+echo "$MYSQL_BASE $PROJECT $incremen_sql" >> $implement_log
 cd '/home/admin/temp/'
 $MYSQL -e "tee $implement_log; select SCHEMA_NAME from information_schema.SCHEMATA where SCHEMA_NAME = '$MYSQL_BASE'" >> $implement_log
 database=`grep -wq "$MYSQL_BASE" implement.log && echo "yes" || echo "no"`

@@ -12,6 +12,9 @@ expect "mysql&gt;"
 send "tee /home/admin/temp/implement.log;\r"
 
 expect "mysql&gt;"
+send "set names utf8;\r"
+
+expect "mysql&gt;"
 send "use $database;\r"
 
 expect "mysql&gt;"
