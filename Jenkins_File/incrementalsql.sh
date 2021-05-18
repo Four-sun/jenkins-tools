@@ -34,8 +34,8 @@ if [ -z "${mysql_base}" ];then
     exit 1
 fi
 
-if [ -z "${server}" ];then
-	echo "检查server是否为空！"
+if [ -z "${server_env}" ];then
+	echo "检查server_env是否为空！"
     set -e
     exit 1
 fi
@@ -194,3 +194,27 @@ function delete_incrementLog() {
     cd ${WORKSPACE}
     rm -rf implement.log
 }
+
+server_env="4.2"
+server="172.16.23.236"
+function  SERVER_ENV() {
+    if [ -z "${server}" ];then
+      echo "检查server为空！"
+      if [ $server_env == "4.2" ]; then
+          server_list="172.16.23.236,172.16.23.53,172.16.100.240,172.16.100.213"
+          echo "$server_list"
+      elif [ $server_env == "4.1"  ]; then
+          server_list="172.16.101.203,172.16.101.200"
+          echo "$server_list"
+      elif [ $server_env == "4.0" ]; then
+          server_list="172.16.8.131"
+          echo "$server_list"
+      fi
+    else
+      echo "检查server不为空！"
+      server_list=$server
+      echo "$server_list"
+    fi
+}
+
+SERVER_ENV
