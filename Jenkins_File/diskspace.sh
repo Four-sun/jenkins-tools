@@ -1,4 +1,16 @@
 #!/bin/bash
+server_list="172.16.101.121,172.16.100.164,172.16.23.236,172.16.23.228,172.16.101.235,172.16.100.213"
+server="172.16.101.121"
+function foo() {
+    if [[ $server_list =~ $server ]]; then
+        echo "包含"
+    else
+        echo "不包含"
+    fi
+
+}
+
+foo
 diskSpace(){
   Publish_IP="172.16.23.53"
 	array_dist=(${Publish_IP//||/ })
@@ -33,4 +45,4 @@ diskSpace(){
 
 }
 
-diskSpace
+#diskSpace
