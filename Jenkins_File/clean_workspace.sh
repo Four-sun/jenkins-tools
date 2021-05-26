@@ -41,6 +41,10 @@ function other_clean() {
 
     find /home/admin/app/dt-uic/logs/*-*-*.log -maxdepth 1  -type f  | xargs rm -rf
 
+    echo `find /home/admin/app/dt-center-modelService/logs/*.log.* -maxdepth 1  -type f` >> $clean_log
+
+    find /home/admin/app/dt-center-modelService/logs/*.log.* -maxdepth 1  -type f | xargs rm -rf
+
 }
 
 
