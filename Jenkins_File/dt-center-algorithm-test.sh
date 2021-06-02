@@ -5,6 +5,8 @@ PASSWD_HOME=${JENKINS_HOME}/secret.txt
 #IP="172.16.101.159"
 temp_path="/home/admin/temp"
 temp_name="dt-center-algorithm"
+science_path="/home/admin/app/dt-center-dataScience"
+science_algorithm_path="plugins/algorithm"
 #Kerberos_server="172.16.101.159||172.16.101.207||172.16.101.228||172.16.100.190"
 Kerberos_server="172.16.101.159"
 #unKerberos_server="172.16.101.227||172.16.101.196||172.16.100.175||172.16.100.214"
@@ -49,12 +51,17 @@ preparation(){
 }
 
 server_ip(){
-  if [ $krbt_env = "true" ]; then
-    Publish_IP=${server}"||"${Kerberos_server}
+  if [ $ssh_Calculation_Node = "true" ]; then
+      if [ $krbt_env = "true" ]; then
+        Publish_IP=${server}"||"${Kerberos_server}
+      else
+        Publish_IP=${server}"||"${unKerberos_server}
+      fi
+        echo $Publish_IP
   else
-    Publish_IP=${server}"||"${unKerberos_server}
+      Publish_IP=${server}
+      echo $Publish_IP
   fi
-    echo $Publish_IP
 }
 
 algorithm_path(){
@@ -103,6 +110,7 @@ sshpass -f ${PASSWD_HOME} ssh admin@$IP << remotessh
     echo 'kerberos环境修改hdfs权限'
     sudo chown -R hdfs:hdfs $algorithm_path/$temp_name
   else
+
     if [ -d $algorithm_path/$temp_name ]; then
         echo '文件夹存在则删除文件'
         rm -rf $algorithm_path/$temp_name/*
@@ -110,13 +118,29 @@ sshpass -f ${PASSWD_HOME} ssh admin@$IP << remotessh
         echo '创建文件夹'
         mkdir -p $algorithm_path/$temp_name
     fi
-    cp -r $temp_path/$temp_name/* $algorithm_path/$temp_name/
+        cp -r $temp_path/$temp_name/* $algorithm_path/$temp_name/
+
+    if [ -d $science_path/$science_algorithm_path ]; then
+        echo 'plugins/algorithm 文件夹存在则删除文件'
+        rm -rf $science_path/$science_algorithm_path/*
+    else
+        echo 'plugins/algorithm 创建文件夹'
+        mkdir -p $science_path/$science_algorithm_path
+    fi
+
+    cd $temp_path/$temp_name && zip -q -r algorithm.zip *
+    cp -r $temp_path/$temp_name/algorithm.zip $science_path/$science_algorithm_path
+    cp -r $temp_path/$temp_name/main_v2_spark.py $science_path/$science_algorithm_path
   fi
   echo '删除临时文件'
 #  rm -rf $temp_path/$temp_name
 exit
 remotessh
 }
+
+
+
+
 
 main(){
 	array=(${Publish_IP//||/ })
