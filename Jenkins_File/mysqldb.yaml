@@ -1,0 +1,12 @@
+mysql_config:
+  db_name: test
+  field_count: 100
+  host: 172.16.100.186
+  jdbcUrl: jdbc:mysql://172.16.100.186:3306/test
+  password: Abc123456
+  port: '3306'
+  reader_count: 100
+  table: streamFactorOne
+  username: test
+  writeMode: insert
+  writer_name: mysqlwriter

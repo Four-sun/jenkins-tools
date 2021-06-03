@@ -4,41 +4,41 @@ MYSQL_USER="drpeco"
 MYSQL_PASSWORD="DT@Stack#123"
 IP="172.16.100.213"
 
-if [ -z "${project}" ];then
-	echo "检查分组和项目有未勾选存在！"
-    set -e
-    exit 1
-fi
-
-if [ -z "${increment_sql}" ];then
-	echo "检查增量SQL是否为空！"
-    set -e
-    exit 1
-fi
-
-if [ -z "${feature_branch}" ];then
-	echo "检查feature_branch是否为空！"
-    set -e
-    exit 1
-fi
-
-if [ -z "${group}" ];then
-	echo "检查group是否为空！"
-    set -e
-    exit 1
-fi
-
-if [ -z "${mysql_base}" ];then
-	echo "检查mysql_base是否为空！"
-    set -e
-    exit 1
-fi
-
-if [ -z "${server_env}" ];then
-	echo "检查server_env是否为空！"
-    set -e
-    exit 1
-fi
+#if [ -z "${project}" ];then
+#	echo "检查分组和项目有未勾选存在！"
+#    set -e
+#    exit 1
+#fi
+#
+#if [ -z "${increment_sql}" ];then
+#	echo "检查增量SQL是否为空！"
+#    set -e
+#    exit 1
+#fi
+#
+#if [ -z "${feature_branch}" ];then
+#	echo "检查feature_branch是否为空！"
+#    set -e
+#    exit 1
+#fi
+#
+#if [ -z "${group}" ];then
+#	echo "检查group是否为空！"
+#    set -e
+#    exit 1
+#fi
+#
+#if [ -z "${mysql_base}" ];then
+#	echo "检查mysql_base是否为空！"
+#    set -e
+#    exit 1
+#fi
+#
+#if [ -z "${server_env}" ];then
+#	echo "检查server_env是否为空！"
+#    set -e
+#    exit 1
+#fi
 
 function fetch_branch(){
     cd ${WORKSPACE}
@@ -217,4 +217,23 @@ function  SERVER_ENV() {
     fi
 }
 
-SERVER_ENV
+#SERVER_ENV
+WORKSPACE="WORKSPACE"
+project="dt-uic"
+increment_sql_path='/increment_sql_path'
+function increment_sql_path() {
+    if [[ -n "${increment_sql_path}" ]]; then
+        cd ${WORKSPACE}/${project}${increment_sql_path}
+    elif [[ -z "${increment_sql_path}" && ${project} = "dt-uic" ]]; then
+        cd ${WORKSPACE}/${project}/uic-web/sql/increment
+    elif [[ -z "${increment_sql_path}" && ${project} = "DAGScheduleX" ]]; then
+        cd ${WORKSPACE}/${project}/sql/4.0
+    elif [[ -z "${increment_sql_path}" && ${project} = "dt-center-dataScience" && ${feature_branch} = "test_4.2.x" ]]; then
+        cd ${WORKSPACE}/${project}/sql/increment/4.2.0
+    else
+        cd ${WORKSPACE}/${project}/sql/increment
+    fi
+}
+
+
+increment_sql_path
