@@ -123,13 +123,13 @@ def commonJson(reader, writer, setting):
         raise Error
 
 
-writer_name = 'mysqlwriter'
-column = columnJson(reader_name, reader_type)
-username = 'test'
-password = 'Abc123456'
-jdbcUrl = 'jdbc:mysql://172.16.100.186:3306/StreamData'
-table = ['datafactory_Result']
-writeMode = 'insert'
+# writer_name = 'mysqlwriter'
+# column = columnJson(reader_name, reader_type)
+# username = 'test'
+# password = 'Abc123456'
+# jdbcUrl = 'jdbc:mysql://172.16.100.186:3306/StreamData'
+# table = ['datafactory_Result']
+# writeMode = 'insert'
 
 # writer_value = writerTableJson(writer_name, column, username, password, jdbcUrl, table, writeMode)
 # reader_value = streamReaderJson(rows=columnJson(reader_name, reader_type), count='100')
@@ -137,10 +137,40 @@ writeMode = 'insert'
 #
 # commonJson(reader_value, writer_value, setting_value)
 
-case = ['int', 'varchar', 'decimal']
-new_case = case[:]
-case.pop(0)
-case.insert(0, 'id')
-print(case)
-print(new_case)
+import re
 
+varchar = re.compile('^timestamp([0-9]{0,5})', re.IGNORECASE)
+
+search_re = re.search(varchar, 'TIMESTAMP(6)')
+if search_re:
+    print(search_re)
+
+# timestamp = re.compile('^TIMESTAMP([0-9])', re.IGNORECASE)
+#
+# search_re = re.search(timestamp, 'TIMESTAMP(6)')
+# if search_re:
+#     print(search_re)
+
+
+type_list = ['id', 'NUMBER', 'NUMBER', 'NUMBER', 'VARCHAR2']
+
+new_type = []
+
+varchar_file = re.compile('^VARCHAR[0-9]{0,5}', re.IGNORECASE)
+int_file = re.compile('^INT([0-9]{0,5})', re.IGNORECASE)
+number_file = re.compile('^NUMBER([0-9]{0,5})', re.IGNORECASE)
+timestamp_file = re.compile('^TIMESTAMP([0-9]{0,5})', re.IGNORECASE)
+
+for tl in type_list:
+    file_type = tl
+    if re.search(varchar_file, tl):
+        file_type = 'string'
+    elif re.search(int_file, tl):
+        file_type = 'int'
+    elif re.search(number_file, tl):
+        file_type = 'int'
+    elif re.search(timestamp_file, tl):
+        file_type = 'timestamp'
+    new_type.append(file_type)
+
+print(new_type)

@@ -5,6 +5,7 @@
 # @Site : 处理数据源创建数据表模块
 # @File : jdbcFunc.py
 # @Software: PyCharm
+import os
 import random
 
 column = {'COLUMN_NAME': ['id', 'name', 'age'], 'DATA_TYPE': ['int', 'varchar', 'decimal']}
@@ -29,4 +30,37 @@ def mysqlCreateSql(table, count):
     return create_sql_title
 
 
-mysqlCreateSql(tableName, count)
+# mysqlCreateSql(tableName, count)
+#
+# case = [('id', 'int', ''), ('name', 'string', ''), ('idcard', 'string', ''), ('birthday', 'date', ''),
+#         ('mobile', 'string', ''), ('email', 'string', ''), ('gender', 'int', ''), ('create_time', 'timestamp', ''),
+#         ('pt', 'string', ''), ('', None, None), ('# Partition Information', None, None),
+#         ('# col_name            ', 'data_type           ', 'comment             '), ('', None, None),
+#         ('pt', 'string', '')]
+#
+# for i in case:
+#     print(i[0])
+#     if i[0] == 'pt':
+#         break
+#
+# L = [123, 2, 3, 4, 5]
+#
+# list_k = list(("index", k) for k in range(len(L)))
+
+
+
+dir_path = os.path.dirname(os.path.abspath(__file__))
+print('当前目录绝对路径:',dir_path)
+
+kwargs = {
+    "name": "id",
+    "type": "INT",
+    "key": "id"
+}
+kwasync = {}
+if 'name' in kwargs:
+    kwasync['name'] = kwargs.pop('name')
+if 'type' in kwargs:
+    kwasync['type'] = kwargs.pop('type')
+
+print(kwasync)
