@@ -53,13 +53,13 @@ class Solution:
             return reverse_list
 
 
-my_tree = tree(height=2, is_perfect=True)
+my_tree = tree(height=2, is_perfect=False)
 print(my_tree)
 # solu = Solution()
 # res_bst = solu.binaryTreePaths(my_tree)
 # print(res_bst)
 
-my_bst = bst(height=2, is_perfect=True)
+my_bst = bst(height=3, is_perfect=True)
 
 my_heap = heap(height=5, is_max=True, is_perfect=False)
 # print(my_tree)
@@ -68,6 +68,6 @@ my_heap = heap(height=5, is_max=True, is_perfect=False)
 task_list = [9517, 9519, 9521, 9523, 9525, 9527, 9531]
 
 solu = Solution()
-res_bst = solu.reverseTaskList(my_bst, task_list)
+res_bst = solu.reverseTaskList(my_tree, task_list)
 print(res_bst)
 

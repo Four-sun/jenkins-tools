@@ -160,32 +160,37 @@ project=${project//,/ };
 arr=($project);
 server=${server//,/ };
 server_arr=($server);
-for each in ${arr[*]}
+increment_sql_list=${increment_sql_list//,/ };
+increment_sql=($increment_sql_list);
+for each in ${arr[*]} ;
 do
  	  project=`echo ${each} | sed 's/\"//g' `
 	  echo "$group & ${project}"
       git_repo="http://gitlab.prod.dtstack.cn/${group}"
 
-        echo "========STEP1:执行checkout${feature_branch}代码========"
+      echo "========STEP1:执行checkout${feature_branch}代码========"
       fetch_branch
 
-      echo "========STEP2:检查文件SQL文件========"
-      check_increment_sql
+      for sql_each in ${increment_sql[*]} ; do
 
-      echo "========STEP3:检查Server发布环境========"
-      for server_each in ${server_arr[*]} ; do
+        echo "检查文件SQL：$sql_each"
+        echo "========STEP2:检查文件SQL文件========"
+        check_increment_sql
 
-        server=`echo ${server_each} | sed 's/\"//g' `
-        echo "Server发布地址：$server"
+        echo "========STEP3:检查Server发布环境========"
+        for server_each in ${server_arr[*]} ; do
 
-        echo "========STEP4:执行post_deploy.sh文件插入SQL========"
-        action_sql
+          server=`echo ${server_each} | sed 's/\"//g' `
+          echo "Server发布地址：$server"
 
-        echo "========STEP5:检查SQL是否插入========"
-        scp_implement
+          echo "========STEP4:执行post_deploy.sh文件插入SQL========"
+          action_sql
 
-      done
+          echo "========STEP5:检查SQL是否插入========"
+          scp_implement
 
+        done
+    done
 done
 
 

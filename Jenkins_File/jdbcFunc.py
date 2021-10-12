@@ -49,18 +49,35 @@ def mysqlCreateSql(table, count):
 
 
 
-dir_path = os.path.dirname(os.path.abspath(__file__))
-print('当前目录绝对路径:',dir_path)
+# dir_path = os.path.dirname(os.path.abspath(__file__))
+# print('当前目录绝对路径:',dir_path)
+#
+# kwargs = {
+#     "name": "id",
+#     "type": "INT",
+#     "key": "id"
+# }
+# kwasync = {}
+# if 'name' in kwargs:
+#     kwasync['name'] = kwargs.pop('name')
+# if 'type' in kwargs:
+#     kwasync['type'] = kwargs.pop('type')
+#
+# print(kwasync)
 
-kwargs = {
-    "name": "id",
-    "type": "INT",
-    "key": "id"
-}
-kwasync = {}
-if 'name' in kwargs:
-    kwasync['name'] = kwargs.pop('name')
-if 'type' in kwargs:
-    kwasync['type'] = kwargs.pop('type')
+import random
 
-print(kwasync)
+
+def rand_values(length, kind):
+    if kind == "INT":
+        base_str = '1234567890'
+    elif kind == "VARCHAR":
+        base_str = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXVCBNM'
+    else:
+        base_str = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXVCBNM1234567890'
+
+    return ''.join(random.choice(base_str) for i in range(length))
+
+
+index_list = list(("value", rand_values(50, "INT")) for k in range(5))
+print(index_list)
