@@ -1,0 +1,28 @@
+{
+		"isSubTask": 0,
+		"type": "file",
+		"version": 0,
+		"parentId": 15765,
+		"isChangeComponent": false,
+		"catalogueType": "TaskDevelop",
+		"operateModel": 1,
+		"taskType": 0,
+		"name": "fanshu_sparkOne",
+		"scheduleStatus": 1,
+		"createUser": "admin@dtstack.com",
+		"readWriteLockVO": {
+			"result": 0,
+			"gmtModified": 1626761773811,
+			"getLock": true,
+			"isDeleted": 0,
+			"lastKeepLockUserName": "admin@dtstack.com",
+			"modifyUserId": 5,
+			"relationId": 8947,
+			"id": 8981,
+			"type": "BATCH_TASK",
+			"lockName": "8947_857_BATCH_TASK",
+			"version": 1
+		},
+		"id": 8947,
+		"submitStatus": 0
+	}

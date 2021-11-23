@@ -1,0 +1,15 @@
+data_20200108_V1.0.1_beta.2.sql
+data_20200214_V1.0.3_beta.2.sql
+schema_20191230_V1.0.1_beta.2.sql
+schema_20200108_V1.0.1_beta.2.sql
+schema_20200119_V1.0.1_beta.2.sql
+schema_20200204_V1.0.1_beta.2.sql
+schema_20200214_V1.0.3_beta.2.sql
+schema_20200324_V1.0.4_beta.2.sql
+schema_20200605_v3.10.x_beta2.sql
+schema_20200803_v4.01.x.sql
+schema_20200911_v4.01.sql
+schema_20201111_v4.1.1.sql
+schema_20201208_v4.1.2.sql
+schema_20201215_v4.1.2.sql
+schema_20210309_v4.2.0.sql

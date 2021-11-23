@@ -1,0 +1,2 @@
+ALTER TABLE dl_project ADD top_sign tinyint(1) DEFAULT 0 NULL COMMENT '是否置顶 1置顶 0不是置顶';
+ALTER TABLE dl_project CHANGE top_sign top_sign tinyint(1) DEFAULT 0 NULL COMMENT '是否置顶 1置顶 0不是置顶' AFTER project_Identifier;

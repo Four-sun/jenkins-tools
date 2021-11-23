@@ -1,0 +1,58 @@
+-- 模拟数据端假数据
+INSERT INTO `da_index_update_record`(`id`, `ts`, `data_source_id`, `index_name`, `data_count`, `is_update`, `create_at`, `update_at`, `is_deleted`) VALUES (1, 20191207, 1, 'dl_user', 1000, 0, '2019-12-07 16:43:11', '2019-12-07 16:43:11', 0);
+INSERT INTO `da_index_update_record`(`id`, `ts`, `data_source_id`, `index_name`, `data_count`, `is_update`, `create_at`, `update_at`, `is_deleted`) VALUES (2, 20191207, 1, 'dl_book', 1000, 0, '2019-12-07 16:43:11', '2019-12-07 16:43:11', 0);
+INSERT INTO `da_index_update_record`(`id`, `ts`, `data_source_id`, `index_name`, `data_count`, `is_update`, `create_at`, `update_at`, `is_deleted`) VALUES (3, 20191207, 1, 'dl_store', 1000, 0, '2019-12-07 16:43:11', '2019-12-07 16:43:11', 0);
+
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'id', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'name', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'sex', 0, 2, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'age', 0, 70, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'phone', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'register_date', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'last_login_date', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'total_money', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'member_level', 0, 10, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'integral', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'store_id', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'book_id', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'education', 0, 6, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'character', 0, 10, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'income', 0, 7, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'channel', 0, 6, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'activity_type', 0, 4, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_user', 'profession', 0, 15, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'cate_lv4_id', 0, 100, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'auth_name', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'bk_name', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'cate_full_name', 0, 100, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'price', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'isbn', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'activity_type', 0, 4, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'channel', 0, 6, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'sl_cnt', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'publish_data', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'id', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_book', 'page_size', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'open_date', 0, 100, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'management_nature', 0, 2, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'city', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'member_num', 0, 100, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'store_no', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'sl_ord', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'sl_cnt', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'store_name', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'id', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'activity_num', 0, 1000, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'operator', 0, 3, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+INSERT INTO `da_column_data`(`ts`, `data_source_id`, `index_name`, `column_name`, `is_multiple_value`, `data_count`, `create_at`, `update_at`, `is_deleted`) VALUES (20191209, 1, 'dl_store', 'store_level', 0, 4, '2019-12-09 20:13:57', '2019-12-09 20:13:57', 0);
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+alter table valid.dq_function_template add template_query text  comment '查询数据条件模版';
+alter table valid.dq_monitor_rule add select_data_sql text comment '查询语句';
+
+update valid.dq_function_template  set template_query = '' where data_source_type = 7 and function_id = 1;
+update valid.dq_function_template  set template_query = '' where data_source_type = 7 and function_id = 2;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null ${filter}' where data_source_type = 7 and function_id = 3;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null ${filter}' where data_source_type = 7 and function_id = 4;
+update valid.dq_function_template  set template_query = '${table} where length(${col})=0 ${filter}' where data_source_type = 7 and function_id = 5;
+update valid.dq_function_template  set template_query = '${table} where length(${col})=0 ${filter}' where data_source_type = 7 and function_id = 6;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1) ${filter}' where data_source_type = 7 and function_id = 7;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1) ${filter}' where data_source_type = 7 and function_id = 8;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1) ${filter}' where data_source_type = 7 and function_id = 9;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1) ${filter}' where data_source_type = 7 and function_id = 10;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null  ${filter}' where data_source_type = 7 and function_id = 11;
+update valid.dq_function_template  set template_query = '' where data_source_type = 7 and function_id = 12;
+update valid.dq_function_template  set template_query = '${table} where ${col} < 0 ${filter} ' where data_source_type = 7 and function_id = 13;
+update valid.dq_function_template  set template_query = '${table} where ${col} = 0 ${filter}' where data_source_type = 7 and function_id = 14;
+update valid.dq_function_template  set template_query = '${table} where ${col} > 0 ${filter}' where data_source_type = 7 and function_id = 15;
+update valid.dq_function_template  set template_query = '${table} where length(${col}) = (select max(length(${col})) from ${table} where 1=1 ${filter}) ${filter}' where data_source_type = 7 and function_id = 16;
+update valid.dq_function_template  set template_query = '${table} where length(${col}) = (select min(length(${col})) from ${table} where 1=1 ${filter}) ${filter}' where data_source_type = 7 and function_id = 17;
+update valid.dq_function_template  set template_query = '${table} where ${col} = (select max(${col}) from ${table} where 1=1 ${filter}) ${filter}' where data_source_type = 7 and function_id = 18;
+update valid.dq_function_template  set template_query = '${table} where ${col} = (select min(${col}) from ${table} where 1=1 ${filter}) ${filter}' where data_source_type = 7 and function_id = 19;
+update valid.dq_function_template  set template_query = '' where data_source_type = 7 and function_id = 20;
+update valid.dq_function_template  set template_query = '' where data_source_type = 7 and function_id = 21;
+update valid.dq_function_template  set template_query = '${table} where ${col}  NOT RLIKE "^[1-9][[:digit:]]{7}((0[[:digit:]])|(1[0-2]))(([0|1|2][[:digit:]])|3[0-1])[[:digit:]]{3}$|^[1-9][[:digit:]]{5}[1-9][[:digit:]]{3}((0[[:digit:]])|(1[0-2]))(([0|1|2][[:digit:]])|3[0-1])[[:digit:]]{3}([0-9]|X)$" ${filter}' where data_source_type = 7 and function_id = 22;
+update valid.dq_function_template  set template_query = '${table} where ${col}  NOT RLIKE "^[1][35678][0-9]{9}$" ${filter}' where data_source_type = 7 and function_id = 23;
+update valid.dq_function_template  set template_query = '${table} where ${col}  NOT RLIKE "^[-[:alnum:]_]+@[-[:alnum:]_]+\\.[-[:alnum:]_]+$" ${filter}' where data_source_type = 7 and function_id = 24;
+
+
+
+update valid.dq_function_template  set template_query = '' where data_source_type = 1 and function_id = 1;
+update valid.dq_function_template  set template_query = '' where data_source_type = 1 and function_id = 2;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null ${filter}' where data_source_type = 1 and function_id = 3;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null ${filter}' where data_source_type = 1 and function_id = 4;
+update valid.dq_function_template  set template_query = '${table} where char_length(${col})=0 ${filter} ' where data_source_type = 1 and function_id = 5;
+update valid.dq_function_template  set template_query = '${table} where char_length(${col})=0 ${filter}' where data_source_type = 1 and function_id = 6;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1)  ${filter}' where data_source_type = 1 and function_id = 7;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1)  ${filter}' where data_source_type = 1 and function_id = 8;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1)  ${filter}' where data_source_type = 1 and function_id = 9;
+update valid.dq_function_template  set template_query = '${table} where ${col} in (select  ${col} from ${table} where 1=1 ${filter} group by ${col} having count(${col}) > 1)  ${filter}' where data_source_type = 1 and function_id = 10;
+update valid.dq_function_template  set template_query = '${table} where ${col} is null  ${filter}' where data_source_type = 1 and function_id = 11;
+update valid.dq_function_template  set template_query = '' where data_source_type = 1 and function_id = 12;
+update valid.dq_function_template  set template_query = '${table} where ${col} < 0 ${filter}' where data_source_type = 1 and function_id = 13;
+update valid.dq_function_template  set template_query = '${table} where ${col} = 0 ${filter}' where data_source_type = 1 and function_id = 14;
+update valid.dq_function_template  set template_query = '${table} where ${col} > 0 ${filter}' where data_source_type = 1 and function_id = 15;
+update valid.dq_function_template  set template_query = '${table} where char_length(${col}) = (select max(char_length(${col})) from ${table} where 1=1 ${filter} ) ${filter}' where data_source_type = 1 and function_id = 16;
+update valid.dq_function_template  set template_query = '${table} where char_length(${col}) = (select min(char_length(${col})) from ${table} where 1=1 ${filter} ) ${filter}' where data_source_type = 1 and function_id = 17;
+update valid.dq_function_template  set template_query = '${table} where ${col} = (select max(${col}) from ${table} where 1=1 ${filter} ) ${filter}' where data_source_type = 1 and function_id = 18;
+update valid.dq_function_template  set template_query = '${table} where ${col} = (select min(${col}) from ${table} where 1=1 ${filter} ) ${filter}' where data_source_type = 1 and function_id = 19;
+update valid.dq_function_template  set template_query = '' where data_source_type = 1 and function_id = 20;
+update valid.dq_function_template  set template_query = '' where data_source_type = 1 and function_id = 21;
+update valid.dq_function_template  set template_query = '${table} where ${col}  NOT RLIKE "^[1-9][[:digit:]]{7}((0[[:digit:]])|(1[0-2]))(([0|1|2][[:digit:]])|3[0-1])[[:digit:]]{3}$|^[1-9][[:digit:]]{5}[1-9][[:digit:]]{3}((0[[:digit:]])|(1[0-2]))(([0|1|2][[:digit:]])|3[0-1])[[:digit:]]{3}([0-9]|X)$" ${filter}' where data_source_type = 1 and function_id = 22;
+update valid.dq_function_template  set template_query = '${table} where ${filter} ${col} NOT RLIKE "^[1][35678][0-9]{9}$"' where data_source_type = 1 and function_id = 23;
+update valid.dq_function_template  set template_query = '${table} where ${filter} ${col} NOT RLIKE "^[-[:alnum:]_]+@[-[:alnum:]_]+\\.[-[:alnum:]_]+$"' where data_source_type = 1 and function_id = 24;

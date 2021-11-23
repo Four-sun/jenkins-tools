@@ -1,0 +1,9 @@
+Datascience/init/create/create.sql
+Datascience/init/create/quartz_mysql.sql
+Datascience/init/create/schedule.sql
+Datascience/init/insert/dict.sql
+Datascience/init/insert/role.sql
+Datascience/init/insert/permission.sql
+Datascience/init/insert/role_permission_procedure.sql
+Datascience/init/insert/sysParameter.sql
+Datascience/init/insert/template_py.sql

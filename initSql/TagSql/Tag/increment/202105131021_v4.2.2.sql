@@ -1,0 +1,1 @@
+ALTER TABLE dl_relation ADD table_name_primary_key varchar(255) DEFAULT NULL COMMENT '主键所对应的表' AFTER primary_key;

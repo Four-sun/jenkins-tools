@@ -1,0 +1,1 @@
+UPDATE dq_dict SET dict_name = 'Hive2',dict_name_zh='Hive2',dict_name_en='Hive2' WHERE  dict_name = 'Spark';

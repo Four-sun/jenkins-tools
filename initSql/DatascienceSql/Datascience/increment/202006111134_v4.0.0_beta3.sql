@@ -1,0 +1,1 @@
+INSERT INTO science_sys_parameter VALUES(DEFAULT(id), 'bdp.system.runtime', 'yyyyMMddHHmmss', 0);

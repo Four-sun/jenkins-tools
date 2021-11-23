@@ -1,0 +1,86 @@
+2021-04-01 20:45:43.756 | INFO     | httprunner.runner:test_start:450 - Start to run testcase: hrun3_demo, TestCase ID: dc6f8c0d-a299-4cae-abe0-c50321db2f3e
+2021-04-01 20:45:43.757 | INFO     | httprunner.runner:__run_step:292 - run step begin: login >>>>>>
+2021-04-01 20:45:44.054 | DEBUG    | httprunner.client:request:186 - client IP: 192.168.106.63, Port: 64728
+2021-04-01 20:45:44.054 | DEBUG    | httprunner.client:request:194 - server IP: 172.16.100.187, Port: 80
+2021-04-01 20:45:44.055 | DEBUG    | httprunner.client:log_print:40 - 
+================== request details ==================
+method   : POST
+url      : http://uic.insight.net/uic/api/v2/account/login
+headers  : {
+    "User-Agent": "python-requests/2.24.0",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "HRUN-Request-ID": "HRUN-dc6f8c0d-a299-4cae-abe0-c50321db2f3e-143757",
+    "Content-Length": "251",
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+cookies  : {}
+body     : username=admin%40dtstack.com&password=YhnQKlqiWaY%2B1u5r7CdYOF3k%2FPGdzm32icgxN%2BlvA4p2kPT6RgubEst55PFvaKV9O1IqDi%2BUnaeIb%2FRm8YCtzcx%2FzbIarvaD9e3ZCXSM17VvT%2BUBLNQuDgvf4e4xudl22%2BcHYO7AfdiFTTettM0d53KA%2FWy%2BS%2FsqfYH0uViPZUs%3D&verify_code=0000
+
+2021-04-01 20:45:44.056 | DEBUG    | httprunner.client:log_print:40 - 
+================== response details ==================
+status_code : 200
+headers  : {
+    "Server": "Tengine/2.1.2",
+    "Date": "Thu, 01 Apr 2021 12:45:50 GMT",
+    "Content-Type": "application/json;charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Set-Cookie": "dt_user_id=1; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_username=admin%40dtstack.com; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_can_redirect=false; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6ImFkbWluQGR0c3RhY2suY29tIiwiZXhwIjoxNjMyODMzMTUwLCJpYXQiOjE2MTcyODExNTB9.kiJxpMrpD-m14tm_7e-NrSXHeGXTghngVRNxR_Xzkd4; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, DT_SESSION_ID=b1821052-33f4-4408-a417-e7a7fad98451; Domain=insight.net; Path=/",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+    "Pragma": "no-cache",
+    "Expires": "0",
+    "X-Frame-Options": "DENY"
+}
+cookies  : {
+    "DT_SESSION_ID": "b1821052-33f4-4408-a417-e7a7fad98451",
+    "dt_can_redirect": "false",
+    "dt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6ImFkbWluQGR0c3RhY2suY29tIiwiZXhwIjoxNjMyODMzMTUwLCJpYXQiOjE2MTcyODExNTB9.kiJxpMrpD-m14tm_7e-NrSXHeGXTghngVRNxR_Xzkd4",
+    "dt_user_id": "1",
+    "dt_username": "admin%40dtstack.com"
+}
+encoding : utf-8
+content_type : application/json;charset=utf-8
+body     : {
+    "data": {
+        "pass": true,
+        "jumpUrl": "/#/products"
+    },
+    "message": "\u6267\u884c\u6210\u529f",
+    "success": true
+}
+
+2021-04-01 20:45:44.056 | INFO     | httprunner.client:request:217 - status_code: 200, response_time(ms): 296.47 ms, response_length: 0 bytes
+2021-04-01 20:45:44.056 | INFO     | httprunner.response:extract:176 - extract mapping: {'vars_name': None}
+2021-04-01 20:45:44.057 | ERROR    | httprunner.response:validate:263 - assert message equal 执行成功(str)	==> fail
+check_item: message
+check_value: None(NoneType)
+assert_method: equal
+expect_value: 执行成功(str)
+2021-04-01 20:45:44.057 | ERROR    | httprunner.response:validate:263 - assert success equal true(str)	==> fail
+check_item: success
+check_value: None(NoneType)
+assert_method: equal
+expect_value: true(str)
+2021-04-01 20:45:44.057 | ERROR    | httprunner.runner:log_req_resp_details:194 - 
+******************************** DETAILED REQUEST & RESPONSE ********************************
+====== request details ======
+url: http://uic.insight.net/uic/api/v2/account/login
+method: POST
+headers: {'HRUN-Request-ID': 'HRUN-dc6f8c0d-a299-4cae-abe0-c50321db2f3e-143757'}
+params: {}
+data: {'username': 'admin@dtstack.com', 'password': 'YhnQKlqiWaY+1u5r7CdYOF3k/PGdzm32icgxN+lvA4p2kPT6RgubEst55PFvaKV9O1IqDi+UnaeIb/Rm8YCtzcx/zbIarvaD9e3ZCXSM17VvT+UBLNQuDgvf4e4xudl22+cHYO7AfdiFTTettM0d53KA/Wy+S/sqfYH0uViPZUs=', 'verify_code': '0000'}
+cookies: {}
+timeout: 120
+allow_redirects: True
+verify: False
+json: None
+
+====== response details ======
+status_code: 200
+headers: {'Server': 'Tengine/2.1.2', 'Date': 'Thu, 01 Apr 2021 12:45:50 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': 'dt_user_id=1; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_username=admin%40dtstack.com; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_can_redirect=false; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6ImFkbWluQGR0c3RhY2suY29tIiwiZXhwIjoxNjMyODMzMTUwLCJpYXQiOjE2MTcyODExNTB9.kiJxpMrpD-m14tm_7e-NrSXHeGXTghngVRNxR_Xzkd4; Domain=insight.net; Expires=Sun, 04-Apr-2021 12:45:50 GMT; Path=/, DT_SESSION_ID=b1821052-33f4-4408-a417-e7a7fad98451; Domain=insight.net; Path=/', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Frame-Options': 'DENY'}
+body: '{"data":{"pass":true,"jumpUrl":"/#/products"},"message":"执行成功","success":true}'
+

@@ -1,0 +1,2 @@
+2021-04-01 19:43:59.886 | INFO     | httprunner.runner:test_start:450 - Start to run testcase: UIC login case, TestCase ID: a9536a67-dbc6-4513-98a1-cd6485b7d35d
+2021-04-01 19:43:59.887 | INFO     | httprunner.runner:__run_step:292 - run step begin: step 1 >>>>>>

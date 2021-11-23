@@ -1,0 +1,1 @@
+ALTER TABLE dl_entity ADD table_life_cycle_id int(11) NULL COMMENT '生命周期id';
