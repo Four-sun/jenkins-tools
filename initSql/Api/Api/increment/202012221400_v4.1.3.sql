@@ -1,0 +1,13 @@
+SET FOREIGN_KEY_CHECKS = 0;
+truncate table qrtz_blob_triggers;
+TRUNCATE table qrtz_calendars;
+TRUNCATE table qrtz_cron_triggers;
+TRUNCATE table qrtz_fired_triggers;
+TRUNCATE table qrtz_locks;
+TRUNCATE table qrtz_paused_trigger_grps;
+TRUNCATE table qrtz_scheduler_state;
+TRUNCATE table qrtz_simple_triggers;
+TRUNCATE table qrtz_simprop_triggers;
+TRUNCATE table qrtz_triggers;
+TRUNCATE table qrtz_job_details;
+SET FOREIGN_KEY_CHECKS = 1;

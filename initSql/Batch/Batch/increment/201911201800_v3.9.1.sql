@@ -1,0 +1,2 @@
+INSERT INTO `ide`.`rdos_dict`(`type`, `dict_name`, `dict_value`, `dict_name_zh`, `dict_name_en`, `dict_sort`, `gmt_create`, `gmt_modified`, `is_deleted`) VALUES (1, 'Hive1', 27, 'Hive1', 'Hive1', 27, now(), now(), 0);
+UPDATE `ide`.`rdos_dict` SET `dict_name` = 'Hive2',`dict_name_zh` = 'Hive2', `dict_name_en` = 'Hive2' WHERE dict_value = 7 AND type = 1;

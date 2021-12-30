@@ -1,0 +1,1 @@
+alter table uic_user  modify column username varchar(130);

@@ -1,0 +1,1 @@
+update uic_product set product_url = 'http://172.16.23.53/' where id = 1001;

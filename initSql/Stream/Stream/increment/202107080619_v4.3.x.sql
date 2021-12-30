@@ -1,0 +1,1 @@
+ALTER TABLE rdos_stream_strategy ADD COLUMN `start_type` TINYINT NOT NULL DEFAULT 1 COMMENT '启动方式：0 重跑，1续跑' AFTER `date_duration`;

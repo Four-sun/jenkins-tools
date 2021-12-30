@@ -1,0 +1,3 @@
+-- fix 27707
+ALTER TABLE da_api MODIFY COLUMN original_host VARCHAR(255) DEFAULT NULL COMMENT '注册API的原始api host';
+ALTER TABLE da_api_test MODIFY COLUMN original_host VARCHAR(255) DEFAULT NULL COMMENT '注册API的原始api host';

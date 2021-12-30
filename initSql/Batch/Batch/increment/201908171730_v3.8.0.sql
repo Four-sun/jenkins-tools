@@ -1,0 +1,1 @@
+alter table rdos_batch_hive_table_permission drop key user_id_table_id_permission_type;

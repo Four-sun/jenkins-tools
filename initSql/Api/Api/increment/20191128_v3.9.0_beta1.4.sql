@@ -1,0 +1,1 @@
+ALTER TABLE da_api_apply ADD `token` VARCHAR(255) DEFAULT NULL COMMENT 'api调用时的token，默认为空或null';

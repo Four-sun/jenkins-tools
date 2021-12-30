@@ -1,0 +1,10 @@
+Batch/init/create/batch.sql
+Batch/init/create/common.sql
+Batch/init/create/schedule.sql
+Batch/init/insert/dict.sql
+Batch/init/insert/function.sql
+Batch/init/insert/permission.sql
+Batch/init/insert/table_model.sql
+Batch/init/insert/batchTaskTemplate.sql
+Batch/init/insert/schedule.sql
+Batch/init/insert/last_auth_procedure.sql

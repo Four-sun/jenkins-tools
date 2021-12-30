@@ -1,0 +1,9 @@
+drop table if exists  `rdos_batch_fill_data_job`;
+drop table if exists  `rdos_batch_job_job`;
+drop table if exists  `rdos_batch_task_shade`;
+drop table if exists  `rdos_batch_job_4backup`;
+drop table if exists  `rdos_batch_task_shade_4backup`;
+drop table if exists  `rdos_batch_fill_data_relation`;
+drop table if exists  `rdos_batch_sql_template`;
+drop table if exists  `rdos_table_lifeday_backup`;
+drop table if exists  `rdos_distribute_lock`;

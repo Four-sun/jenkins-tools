@@ -1,0 +1,9 @@
+alter table `rdos_stream_task` modify source_params longtext null comment '输入源';
+alter table `rdos_stream_task` modify sink_params longtext null comment '输出源';
+alter table `rdos_stream_task` modify side_params longtext null comment '维表';
+alter table `rdos_stream_task_shade` modify source_params longtext null comment '输入源';
+alter table `rdos_stream_task_shade` modify sink_params longtext null comment '输出源';
+alter table `rdos_stream_task_shade` modify side_params longtext null comment '维表';
+alter table `rdos_stream_task_version` modify source_params longtext null comment '输入源';
+alter table `rdos_stream_task_version` modify sink_params longtext null comment '输出源';
+alter table `rdos_stream_task_version` modify side_params longtext null comment '维表';

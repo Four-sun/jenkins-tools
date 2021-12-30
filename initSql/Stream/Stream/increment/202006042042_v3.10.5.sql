@@ -1,0 +1,41 @@
+CREATE TABLE `rdos_stream_package` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tenant_id` int(11) NOT NULL COMMENT '租户id',
+  `project_id` int(11) NOT NULL COMMENT '项目id',
+  `name` varchar(200) NOT NULL COMMENT '包名称',
+  `comment` varchar(500) DEFAULT NULL COMMENT '描述',
+  `create_user_id` int(11) NOT NULL COMMENT '申请人-即为打包人',
+  `publish_user_id` int(11) DEFAULT NULL COMMENT '发布人',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '包类型：0-本地创建，1-上传',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '发布状态：0-待发布，1-成功，2-失败',
+  `log` text COMMENT '失败日志',
+  `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增时间,申请时间',
+  `gmt_modified` datetime DEFAULT NULL COMMENT '修改时间，发布时间',
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0正常 1逻辑删除',
+  `is_downloaded` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx` (`tenant_id`,`project_id`,`name`(128))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `rdos_stream_package_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL COMMENT 'item名称',
+  `tenant_id` int(11) NOT NULL COMMENT '租户id',
+  `project_id` int(11) NOT NULL COMMENT '项目id',
+  `package_id` int(11) NOT NULL COMMENT '发布包id',
+  `item_id` int(11) DEFAULT NULL COMMENT '发布包下的资源id',
+  `item_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '资源类型：0-资源，1-函数, 2 任务',
+  `item_inner_type` tinyint(1) DEFAULT NULL COMMENT '资源具体类型',
+  `is_update_param` tinyint(1) DEFAULT NULL COMMENT '更新环境参数：0-不更新，1-更新',
+  `log` text COMMENT '失败日志',
+  `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增时间,申请时间',
+  `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '修改时间，发布时间',
+  `create_user_id` int(11) DEFAULT NULL COMMENT '资源原始的创建人id',
+  `modify_user_id` int(11) DEFAULT NULL COMMENT '资源原始的修改人id',
+  `create_user_name` varchar(22) DEFAULT NULL COMMENT '资源原始的创建人',
+  `modify_user_name` varchar(22) DEFAULT NULL COMMENT '资源原始的创建人',
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0正常 1逻辑删除',
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx` (`package_id`,`item_id`,`item_type`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

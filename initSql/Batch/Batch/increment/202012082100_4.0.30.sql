@@ -1,0 +1,1 @@
+update dt_center_cron_schedule set cron = '0 30 22 * * ?' where job_detail_name = 'tableLifecycleJob';

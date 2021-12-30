@@ -1,0 +1,1 @@
+alter table `rdos_hive_table_action_record` add index `idx_user_tenant`(`user_id`,`tenant_id`,`is_deleted`);

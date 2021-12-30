@@ -1,0 +1,1 @@
+update dt_center_cron_schedule set cron = '0 0 */12 * * ?' where job_detail_name = 'dataSciencePeriodDataCleanJob';

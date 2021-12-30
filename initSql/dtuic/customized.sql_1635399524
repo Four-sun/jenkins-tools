@@ -1,0 +1,1 @@
+update uic_product set product_url = 'http://{{.tengine_host}}/' where id = 1001;

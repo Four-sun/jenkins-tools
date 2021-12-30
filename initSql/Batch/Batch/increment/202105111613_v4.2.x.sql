@@ -1,0 +1,2 @@
+INSERT INTO `rdos_dict`(`type`,`dict_name`,`dict_value`,`dict_name_zh`,`dict_name_en`,`dict_sort`,`gmt_create`,`gmt_modified`,`is_deleted`)
+VALUES('1', 'AWS S3', '51', 'AWS S3', 'AWS S3', '63', now(), now(), '0');

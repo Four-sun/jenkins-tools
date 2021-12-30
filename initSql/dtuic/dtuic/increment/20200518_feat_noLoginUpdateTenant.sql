@@ -1,0 +1,1 @@
+INSERT INTO uic_event(event_code, support_method, event_describe) VALUES ('GRANT_ADMIN', 'POST', '租户赋予用户admin权限');

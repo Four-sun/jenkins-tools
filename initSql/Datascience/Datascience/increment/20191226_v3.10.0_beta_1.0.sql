@@ -1,0 +1,20 @@
+CREATE TABLE science_task_batch (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  tenant_id int(11) NOT NULL COMMENT '租户id',
+  project_id int(11) NOT NULL COMMENT '项目id',
+  node_pid int(11) DEFAULT NULL COMMENT '父文件夹id, 组件不需要',
+  task_name varchar(256) NOT NULL COMMENT '批量任务名称',
+  task_status tinyint(1) NOT NULL COMMENT '任务状态：0进行中，1成功（循环结束），2失败（循环异常结束）',
+  sql_text longtext NOT NULL COMMENT '模版sql文本',
+  task_params text COMMENT '任务参数',
+  schedule_conf varchar(2048) DEFAULT NULL COMMENT '调度配置 json格式',
+  period_type tinyint(2) DEFAULT NULL COMMENT '周期类型',
+  create_type tinyint(1) DEFAULT '0' COMMENT '任务创建类型：0创建，1创建并提交',
+  gmt_create datetime DEFAULT CURRENT_TIMESTAMP COMMENT '新增时间',
+  gmt_modified datetime DEFAULT CURRENT_TIMESTAMP COMMENT '修改时间',
+  modify_user_id int(11) NOT NULL COMMENT '最后修改task的用户',
+  create_user_id int(11) NOT NULL COMMENT '新建task的用户',
+  owner_user_id int(11) NOT NULL COMMENT '负责人id',
+  is_deleted tinyint(1) NOT NULL DEFAULT '0' COMMENT '0正常 1逻辑删除',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COMMENT='批量创建任务表（notebook）';

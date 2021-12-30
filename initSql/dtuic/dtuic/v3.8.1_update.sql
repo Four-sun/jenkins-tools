@@ -1,0 +1,1 @@
+INSERT INTO `dtuic`.`uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('MODIFY_INFO', 'POST', '修改用户信息', DEFAULT, DEFAULT);

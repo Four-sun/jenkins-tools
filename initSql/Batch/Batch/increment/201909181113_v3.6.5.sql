@@ -1,0 +1,1 @@
+ALTER TABLE rdos_batch_script ADD task_params text COMMENT '脚本环境参数';

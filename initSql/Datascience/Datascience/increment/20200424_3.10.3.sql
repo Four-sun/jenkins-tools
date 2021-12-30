@@ -1,0 +1,1 @@
+update science_data_source_aiworks set is_deleted = 1 where is_default = 0;

@@ -1,0 +1,1 @@
+INSERT INTO `uic_event`(event_code, support_method, event_describe) VALUES ('DELETE_TENANT', 'POST', '删除租户');

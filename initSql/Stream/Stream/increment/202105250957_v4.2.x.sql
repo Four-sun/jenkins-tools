@@ -1,0 +1,1 @@
+ALTER TABLE `rdos_project` DROP INDEX `index_project_name`, ADD UNIQUE `index_project_name` USING BTREE (`project_name`, `tenant_id`) comment '';

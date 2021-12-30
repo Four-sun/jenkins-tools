@@ -1,0 +1,1 @@
+alter table rdos_hive_table_info_deleted add table_file_count int(11) DEFAULT NULL COMMENT '表文件数量';

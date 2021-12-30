@@ -1,0 +1,1 @@
+alter table rdos_batch_data_source_migration_task modify column ide_table_name varchar(256) NOT NULL DEFAULT '' COMMENT 'ide中hive表名';

@@ -1,0 +1,1 @@
+ALTER TABLE `ide`.`rdos_batch_alarm`     ADD COLUMN `is_task_holder` tinyINT(1) DEFAULT '1' NULL COMMENT '1 有任务负责人  0无任务负责人' ;

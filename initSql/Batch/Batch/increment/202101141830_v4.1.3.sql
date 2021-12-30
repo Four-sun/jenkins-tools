@@ -1,0 +1,1 @@
+alter table rdos_file_merge_rule modify partition_info LONGTEXT null comment '分区信息';

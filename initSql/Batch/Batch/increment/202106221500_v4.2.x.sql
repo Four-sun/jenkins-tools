@@ -1,0 +1,1 @@
+update rdos_batch_task set component_version = null where task_type = 2;

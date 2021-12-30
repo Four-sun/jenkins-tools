@@ -1,0 +1,1 @@
+ALTER TABLE `rdos_batch_data_source_task_ref` ADD INDEX `index_task_id`(`task_id`) USING BTREE;

@@ -1,0 +1,1 @@
+INSERT INTO `dtuic`.`uic_event`(`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ( 'CHANGE_TENANT_OWNER', 'POST', '切换租户所有者', '2019-08-09 10:53:51', '2019-08-09 10:53:51');

@@ -1,0 +1,5 @@
+INSERT INTO `uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('CREATE_GROUP', 'POST', '创建用户组', DEFAULT, DEFAULT);
+INSERT INTO `uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('EDIT_GROUP', 'POST', '编辑用户组', DEFAULT, DEFAULT);
+INSERT INTO `uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('JOIN_GROUP', 'POST', '加入用户组', DEFAULT, DEFAULT);
+INSERT INTO `uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('DELETE_GROUP', 'POST', '删除用户组', DEFAULT, DEFAULT);
+INSERT INTO `uic_event` (`event_code`, `support_method`, `event_describe`, `gmt_create`, `gmt_modified`) VALUES ('REMOVE_USER_GROUP', 'POST', '移除用户组用户', DEFAULT, DEFAULT);

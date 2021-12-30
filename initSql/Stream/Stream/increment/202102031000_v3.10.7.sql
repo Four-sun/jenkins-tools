@@ -1,0 +1,1 @@
+update `rdos_stream_function` set is_deleted = 1 where type = 1 and name in ('TIMETOSECOND', 'TIMETOMILLISECOND');

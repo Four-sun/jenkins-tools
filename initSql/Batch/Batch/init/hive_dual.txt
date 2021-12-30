@@ -1,0 +1,6 @@
+echo 'X' > lijie.txt
+
+create table dual (dummy string);
+
+load data local inpath '/home/hadoop/lijie.txt' overwrite into table dual;
+

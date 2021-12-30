@@ -1,0 +1,1 @@
+update rdos_batch_data_source set type = 38 where type = 30 and is_deleted = 0;

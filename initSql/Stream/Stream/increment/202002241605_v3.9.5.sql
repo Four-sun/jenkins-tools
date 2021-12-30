@@ -1,0 +1,2 @@
+-- 修改之前 3.9.1-2 与 3.9.3-4 中 201912021438_v3.9.4.sql 不同导致的问题
+UPDATE `rdos_dict` set `dict_name` = 'Polardb for MySQL 8', `dict_name_zh` = 'Polardb for MySQL 8', `dict_name_en` = 'Polardb for MySQL 8' where `type` = 1 and `dict_value` = 28;

@@ -1,0 +1,1 @@
+alter table rdos_batch_table_relation drop index unique_idx, add index unique_idx (relation_id);

@@ -1,0 +1,1 @@
+ALTER TABLE `rdos_stream_task_operation_log` CHANGE COLUMN `action` `action` text NOT NULL COMMENT '执行的动作';

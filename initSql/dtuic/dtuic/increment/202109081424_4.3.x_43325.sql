@@ -1,0 +1,1 @@
+drop index group_name on uic_group;

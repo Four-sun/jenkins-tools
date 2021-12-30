@@ -1,0 +1,1 @@
+ALTER table rdos_batch_hive_select_sql add `other_type` int null COMMENT '其他类型：0 默认，1 Impala';
