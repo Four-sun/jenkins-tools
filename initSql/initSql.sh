@@ -44,8 +44,6 @@ function project_check() {
 
     if [ "$project_result" != "" ]; then
         if [ "${is_exec_project}" == "Engine" ]; then
-            #增量sql文件相对路径
-            implement_route="${is_exec_project_path}/${is_exec_project}/${is_exec_project}/4.0/"
             #增量sql开始执行文件名
             star_implement_file="20210510120000_v4.2.x.sql"
         elif [ "${is_exec_project}" == "Api" ]; then
@@ -77,6 +75,12 @@ function project_check() {
             implement_route="${is_exec_project_path}/${is_exec_project}/${is_exec_project}/increment/"
             #执行post_deploy地址
             project_path="${is_exec_project_path}/${is_exec_project}/post_deploy.sh"
+
+        if [ "${is_exec_project}" == "Engine" ]; then
+            #增量sql文件相对路径
+            implement_route="${is_exec_project_path}/${is_exec_project}/${is_exec_project}/4.0/"
+        fi
+
     else
         printf "执行项目填写错误\n"
         exit 1
