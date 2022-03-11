@@ -1,0 +1,45 @@
+{
+	"tableName": "ci_sparksql_kinship_analysis_01",
+	"tableComment": "血缘解析层级表_1",
+	"selfTables": [{
+		"name": "client_id",
+		"columnType": "bigint",
+		"comment": ""
+	}, {
+		"name": "fund_code",
+		"columnType": "bigint",
+		"comment": ""
+	}, {
+		"name": "holding_cost",
+		"columnType": "decimal(24,8)",
+		"comment": ""
+	}, {
+		"name": "holding_income",
+		"columnType": "decimal(24,8)",
+		"comment": ""
+	}, {
+		"name": "contno",
+		"columnType": "string",
+		"comment": "解释"
+	}, {
+		"name": "sys",
+		"columnType": "string",
+		"comment": "系统"
+	}],
+	"data": [
+		["client_id", "fund_code", "holding_cost", "holding_income", "contno", "sys", "pt"],
+		["1", "1", "10000", "10000", " 1 ", "LIS", "20220309"],
+		["2", "2", "20000", "20000", "2", "HRP", "20220309"],
+		["3", "3", "30000", "30000", "3 ", "LIS", "20220309"],
+		["4", "4", "30000", "30000", "4", "HRP", "20220309"],
+		["5", "5", "30000", "30000", " 5", "LIS", "20220309"],
+		["6", "6", "30000", "30000", "6", "HRP", "20220309"]
+	],
+	"parentTables": {
+		"totalCount": 0
+	},
+	"childTables": {"totalCount": 1, "data": [{
+		"comment": "血缘解析层级表_2",
+		"tableName": "ci_sparksql_kinship_analysis_02"
+	}]}
+}
