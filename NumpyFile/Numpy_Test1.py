@@ -103,9 +103,12 @@ mask = np.array([1, 0, 1, 0, 0, 1], dtype=bool)
 print(mask)
 """
 # 数组的索引和切片
-import numpy as np
+# import numpy as np
 
-sArr1 = np.arange(8)
+from numpy import arange
+from numpy import array
+
+sArr1 = arange(8)
 print('一维all%s' % sArr1)
 print("从二开始到最后，跳2 %s" % sArr1[2::2])
 print('1-2 %s' % sArr1[1:2])
@@ -113,5 +116,5 @@ print('1-6 跳2 %s' % sArr1[1:6:2])
 
 # 二位数组索引
 
-arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+arr2d = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 print('二位数组第1组 %s' % arr2d[1])

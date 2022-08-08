@@ -15,8 +15,6 @@ def randomList(n):
     iList = []
     for i in range(n):
         iList.append(random.randrange(1000))
-
-    print(iList)
     return iList
 
 

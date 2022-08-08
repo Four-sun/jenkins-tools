@@ -2,7 +2,7 @@
 # --- coding: utf-8 ---
 # @Time : 2021/8/2 7:18 下午
 # @Author : FanShu
-# @Site : 
+# @Site :
 # @File : binarytreeFunc.py
 # @Software: PyCharm
 
@@ -53,7 +53,7 @@ class Solution:
             return reverse_list
 
 
-my_tree = tree(height=2, is_perfect=False)
+my_tree = tree(height=3, is_perfect=False)
 print(my_tree)
 # solu = Solution()
 # res_bst = solu.binaryTreePaths(my_tree)
@@ -64,10 +64,10 @@ my_bst = bst(height=3, is_perfect=True)
 my_heap = heap(height=5, is_max=True, is_perfect=False)
 # print(my_tree)
 # print(my_tree.inorder)
-
-task_list = [9517, 9519, 9521, 9523, 9525, 9527, 9531]
-
-solu = Solution()
-res_bst = solu.reverseTaskList(my_tree, task_list)
-print(res_bst)
+#
+# task_list = [9517, 9519, 9521, 9523, 9525, 9527, 9531]
+#
+# solu = Solution()
+# res_bst = solu.reverseTaskList(my_tree, task_list)
+# print(res_bst)
 

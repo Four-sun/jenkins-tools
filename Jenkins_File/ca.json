@@ -1,73 +1,78 @@
 {
-    "code":1,
-    "message":null,
-    "data":{
-        "data":[
-            {
-                "gmtModified":1646192102000,
-                "dbName":"dtbatch_5_0_3_std",
-                "project":"dtbatch_5_0_3_std",
-                "tableDesc":"血缘解析层级表_2",
-                "tableFileCount":2,
-                "tableName":"sparksql_field_function_02",
-                "tableType":1,
-                "dataSourceId":1369,
-                "isDeleted":0,
-                "isPartition":false,
-                "tableSize":"0",
-                "chargeUser":"admin@dtstack.com",
-                "lastDdlTime":1646191983000,
-                "lifeDay":9999,
-                "id":3913,
-                "projectAlias":"离线计算迭代5.0.3",
-                "catalogueId":1,
-                "isIgnore":0,
-                "hasMergeRule":false,
-                "sizeUpdateTime":1646192102000,
-                "isCollect":0,
-                "gmtCreate":1646192101000,
-                "lastDmlTime":1646192102000,
-                "catalogue":"",
-                "belongProjectId":417,
-                "location":"hdfs://ns1/dtInsight/hive/warehouse/dtbatch_5_0_3_std.db/sparksql_field_function_02",
-                "permissionStatus":3
-            },
-            {
-                "gmtModified":1646192102000,
-                "dbName":"dtbatch_5_0_3_std",
-                "project":"dtbatch_5_0_3_std",
-                "tableDesc":"血缘解析层级表_2",
-                "tableFileCount":2,
-                "tableName":"sparksql_field_function_02",
-                "tableType":1,
-                "dataSourceId":1369,
-                "isDeleted":0,
-                "isPartition":false,
-                "tableSize":"0",
-                "chargeUser":"admin@dtstack.com",
-                "lastDdlTime":1646191983000,
-                "lifeDay":9999,
-                "id":3913,
-                "projectAlias":"离线计算迭代5.0.3",
-                "catalogueId":1,
-                "isIgnore":0,
-                "hasMergeRule":false,
-                "sizeUpdateTime":1646192102000,
-                "isCollect":0,
-                "gmtCreate":1646192101000,
-                "lastDmlTime":1646192102000,
-                "catalogue":"",
-                "belongProjectId":417,
-                "location":"hdfs://ns1/dtInsight/hive/warehouse/dtbatch_5_0_3_std.db/sparksql_field_function_02",
-                "permissionStatus":3
-            }
-        ],
-        "totalPage":1,
-        "pageSize":20,
-        "currentPage":1,
-        "totalCount":1
-    },
-    "space":0,
-    "version":"hotfix_5.0.x_52040",
-    "success":true
+  "code": 1,
+  "message": null,
+  "data": {
+    "totalSize": "84.7KB",
+    "checkpointList": [
+      {
+        "time": 1657176518000,
+        "duration": 59,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-12",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176458000,
+        "duration": 47,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-11",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176398000,
+        "duration": 47,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-10",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176338000,
+        "duration": 46,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-9",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176278000,
+        "duration": 47,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-8",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176218000,
+        "duration": 59,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-7",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176158000,
+        "duration": 48,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-6",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176098000,
+        "duration": 53,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-5",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657176038000,
+        "duration": 56,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-4",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657175978000,
+        "duration": 53,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-3",
+        "storeSize": "7.7KB"
+      },
+      {
+        "time": 1657175918000,
+        "duration": 52,
+        "storePath": "hdfs://ns1/dtInsight/flink112/checkpoints/0a53882d32be354d37202f77dbd98972/chk-2",
+        "storeSize": "7.7KB"
+      }
+    ]
+  },
+  "space": 0,
+  "version": null,
+  "success": true
 }

@@ -23,16 +23,16 @@ def jsonLoad():
     except Exception as Error:
         return Error
 
-insert_sql = json.loads('{"vertex": true, "edge": false, "data": {"id": 10107, "name": "flow162867841651447", "type": "file", "taskType": 0, "parentId": 17215, "catalogueType": "TaskDevelop", "nodePid": 17215, "submitStatus": 0, "version": 0, "readWriteLockVO": {"result": 0, "gmtModified": 1628678412246, "getLock": true, "isDeleted": 0, "lastKeepLockUserName": "admin@dtstack.com", "modifyUserId": 5, "relationId": 10107, "id": 10183, "type": "BATCH_TASK", "lockName": "10107_857_BATCH_TASK", "version": 1}}, "x": 1000, "y": 100, "value": "null", "id": 10107}')
-
-nodePid = 40779
-taskValues = jsonLoad()
-data = taskValues
-x_path = 800
-y_path = 0
-dependency_id = insert_sql['id'] + 1
-
-case = {'vertex': False, 'edge': True, 'x': 0, 'y': 0, 'value': None, 'id': f'{dependency_id}', 'source': data[-1], 'target': insert_sql}
+# insert_sql = json.loads('{"vertex": true, "edge": false, "data": {"id": 10107, "name": "flow162867841651447", "type": "file", "taskType": 0, "parentId": 17215, "catalogueType": "TaskDevelop", "nodePid": 17215, "submitStatus": 0, "version": 0, "readWriteLockVO": {"result": 0, "gmtModified": 1628678412246, "getLock": true, "isDeleted": 0, "lastKeepLockUserName": "admin@dtstack.com", "modifyUserId": 5, "relationId": 10107, "id": 10183, "type": "BATCH_TASK", "lockName": "10107_857_BATCH_TASK", "version": 1}}, "x": 1000, "y": 100, "value": "null", "id": 10107}')
+#
+# nodePid = 40779
+# taskValues = jsonLoad()
+# data = taskValues
+# x_path = 800
+# y_path = 0
+# dependency_id = insert_sql['id'] + 1
+#
+# case = {'vertex': False, 'edge': True, 'x': 0, 'y': 0, 'value': None, 'id': f'{dependency_id}', 'source': data[-1], 'target': insert_sql}
 
 
 # json_values = {'vertex': True, 'edge': False, 'data':
@@ -46,16 +46,16 @@ case = {'vertex': False, 'edge': True, 'x': 0, 'y': 0, 'value': None, 'id': f'{d
 # print(value_double_dumps)
 
 
-height = 5
-width = 2
-total = int(height * width)
-c = 0
-x = 0
-list_null = []
-for w in range(width):
-    list_null.append([])
-    for h in range(height):
-        list_null[w].append(h)
+# height = 5
+# width = 2
+# total = int(height * width)
+# c = 0
+# x = 0
+# list_null = []
+# for w in range(width):
+#     list_null.append([])
+#     for h in range(height):
+#         list_null[w].append(h)
 
 
 
@@ -186,4 +186,25 @@ def rules_cycle(times, rule):
         print(json.dumps(rules))
         return rules
 
-rules_cycle(2, rule)
+# rules_cycle(2, rule)
+
+
+
+taskVariables = [{'paramName': 'name', 'fatherTaskId': '', 'fatherParamName': '', 'annotation': '', 'type': 5, 'id': -1, 'key': 1, 'fatherParamNameList': '', 'paramCommand': ''}]
+
+upstream_param = {'data': [{'annotation': '', 'id': 74495, 'paramName': 'out_name', 'taskId': 37125, 'paramCommand': '1314'}]}
+
+c_list = []
+for i in range(len(taskVariables)):
+    task_i = taskVariables[i]
+    print(upstream_param['data'])
+    if upstream_param['data'] is not None:
+        up_param = upstream_param['data'][i]
+        for _ in up_param:
+            task_i['fatherTaskId'] = up_param['taskId']
+            task_i['fatherParamName'] = up_param['paramName']
+            task_i['fatherParamNameList'] = [up_param]
+            task_i['paramCommand'] = up_param['paramCommand']
+    print(task_i)
+    c_list.append(task_i)
+print(c_list)
