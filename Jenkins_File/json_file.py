@@ -181,14 +181,19 @@ def commonJson(reader, writer, setting):
 
 
 # with open('./ca.json', 'r') as jsonLoads:
-#     dict_str = json.load(jsonLoads)
+#     dict_str = json.dumps(jsonLoads)
+#     print(dict_str)
 #     print(len([]))
-#     print(dict_str['data'])
-#     print(len(dict_str['data']['checkpointList']))
 
-case = ['fanshu', 'four']
+#
+# l_ca = json.dumps(ca, ensure_ascii=False)
+# l_ca = json.dumps(ca)
+# print(l_ca)h
 
-if type(case) is list:
-    print("list")
-elif type(case) is int:
-    print("int")
+#
+streamTaskDirtyDataManageVO = dict(linkInfo=dict(sourceId=57),
+                                   logPrintInterval=1, maxCollectFailedRows=100,
+                                   maxRows=100, taskId=11)
+ud = {}
+ud.update(a=streamTaskDirtyDataManageVO)
+print(ud)
