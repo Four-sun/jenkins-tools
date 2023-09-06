@@ -7,15 +7,15 @@ backup_dir=/data/mysqlBackFile
 #日期
 dd=`date +%Y-%m-%d-%H-%M-%S`
 #备份工具
-tool=$MYSQL_BIN/mysqldump
+tool=/opt/dtstack/DTBase/mysql/bin/mysqldump
 #备份库host
-host="172.16.10.107,172.16.23.253"
+host="172.16.82.147"
 #用户名
 username=drpeco
 #密码
 password=DT@Stack#123
 #将要备份的数据库
-database_name="streamapp,api,assets,dagschedulex,dtuic,ide,model,science,tagapp,valid,"
+database_name="streamapp,api,assets,dagschedulex,dtuic,ide,tagapp,valid,"
 
 host_list=${host//,/ };
 arr_host=($host_list);

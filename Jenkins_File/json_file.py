@@ -5,6 +5,7 @@
 # @Site :
 # @File : json_file.py
 # @Software: PyCharm
+import datetime
 import json
 
 
@@ -174,10 +175,28 @@ def commonJson(reader, writer, setting):
 #     new_type.append(file_type)
 #
 # print(new_type)
+#
+ca = '{"code":1,"message":null,"data":[{"key":"id","type":"bigint","comment":"","part":false,"scale":null,"precision":null},{"key":"varchar_data","type":"string","comment":"","part":false,"scale":null,"precision":null}],"space":0,"version":null,"success":true}'
+ca1 = "{\"sourceId\":41,\"isCleanSession\":true,\"receiveUsers\":[],\"senderTypes\":[],\"qos\":2,\"dataMapping\":{\"source\":[{\"name\":\"fanshu2\"}],\"target\":[{\"fieldMapping\":{\"sourceCol\":[{\"meta\":false,\"name\":\"id\",\"id\":1},{\"meta\":false,\"name\":\"varchar_data\",\"id\":2}],\"source\":[{\"meta\":false,\"name\":\"id\",\"id\":1},{\"meta\":false,\"name\":\"varchar_data\",\"id\":2}],\"target\":[{\"name\":\"id\",\"id\":\"id\",\"type\":\"bigint\"},{\"name\":\"varchar_data\",\"id\":\"varchar_data\",\"type\":\"string\"}]},\"name\":\"stream_mysql_ogg_one\",\"tableName\":\"automation.fanshu1\"}]},\"kafkaFormat\":\"OGG-JSON_ROW\",\"type\":1,\"tableName\":[\"stream_mysql_ogg_one\"]}"
 
-# ca ={'batch': False, 'componentVersion': '1.12', 'computeType': 0, 'createModel': 0, 'createUserId': 1, 'createUserName': 'admin@dtstack.com', 'engineType': 0, 'forceUpdate': False, 'gmtCreate': 1657160963000, 'gmtModified': 1657160963000, 'id': 11529, 'isDeleted': 0, 'isDirtyDataManage': False, 'lockVersion': 0, 'mainClass': '', 'modifyUserName': 'admin@dtstack.com', 'name': 'stream_test_task_towlxcze', 'nodePid': 91, 'projectId': 13, 'readWriteLockVO': {'channel': 'Others', 'getLock': True, 'gmtCreate': 1657160963000, 'gmtModified': 1657160963000, 'id': 11529, 'isDeleted': 0, 'lastKeepLockUserName': 'admin@dtstack.com', 'lockName': '11529_13_STREAM_TASK', 'modifyUserId': 1, 'projectId': 13, 'relationId': 11529, 'result': 0, 'sdkVersion': 'v1.0', 'signType': 'DEFAULT', 'timestamp': 1657160963342, 'type': 'STREAM_TASK', 'version': 1}, 'resourceGroupVO': {'resourceId': 1, 'resourceName': 'default'}, 'side': [], 'sideParams': '', 'sideStr': '[]', 'sink': [], 'sinkParams': '', 'sinkStr': '[{"sourceId": 33, "columnsText": "id int \\nname varchar", "updateMode": "append", "allReplace": "false", "columns": [{"column": "id", "type": "int"}, {"column": "name", "type": "varchar"}], "sinkDataType": "dt_nest", "parallelism": 1, "topic": "test_result_table_name_zhcnvjia", "createType": 0, "sourceName": "kafka_auto_test", "type": 37, "tableName": "MyResult"}]', 'source': [], 'sourceParams': '', 'sourceStr': '[{"createType": 0, "type": 37, "columns": [{"column": "id", "type": "int"}, {"column": "name", "type": "varchar"}], "sourceId": "33", "topic": "test_topic_name_lnwqcrmo", "charset": "utf-8", "table": "MyTable", "timeType": 1, "timeZone": "Asia/Shanghai", "offset": 0, "offsetUnit": "SECOND", "columnsText": "id int\\nname varchar", "parallelism": 1, "offsetReset": "latest", "timestampOffset": null, "sourceDataType": "dt_nest"}]', 'sqlText': 'aW5zZXJ0IGludG8gTXlSZXN1bHQgc2VsZWN0IGlkLG5hbWUgZnJvbSBNeVRhYmxl', 'status': 0, 'strategyId': 0, 'submitState': 0, 'taskId': '4j5tt5fck7s0', 'taskParams': '## 资源相关\nparallelism.default=1\ntaskmanager.numberOfTaskSlots=1\njobmanager.memory.process.size=1g\ntaskmanager.memory.process.size=2g\n\n## 时间相关\n## 设置Flink时间选项，有ProcessingTime,EventTime,IngestionTime可选\n## 非脚本模式会根据Kafka自动设置。脚本模式默认为ProcessingTime\n# pipeline.time-characteristic=EventTime\n\n## Checkpoint相关\n## 生成checkpoint时间间隔（以毫秒为单位），默认:5分钟,注释掉该选项会关闭checkpoint生成\nexecution.checkpointing.interval=5min\n## 状态恢复语义,可选参数EXACTLY_ONCE,AT_LEAST_ONCE；默认为EXACTLY_ONCE\n# execution.checkpointing.mode=EXACTLY_ONCE\n##任务取消后保留hdfs上的checkpoint文件\nexecution.checkpointing.externalized-checkpoint-retention=RETAIN_ON_CANCELLATION\n\n# Flink SQL独有，状态过期时间\ntable.exec.state.ttl=1d\n\nlog.level=INFO\n\n## 使用Iceberg和Hive维表开启\n# table.dynamic-table-options.enabled=true\n\n## Kerberos相关\n# security.kerberos.login.contexts=Client,KafkaClient\n\n\n## 高阶参数\n## 窗口提前触发时间\n# table.exec.emit.early-fire.enabled=true\n# table.exec.emit.early-fire.delay=1s\n\n## 当一个源在超时时间内没有收到任何元素时，它将被标记为临时空闲\n# table.exec.source.idle-timeout=10ms\n\n## 是否开启minibatch\n## 可以减少状态开销。这可能会增加一些延迟，因为它会缓冲一些记录而不是立即处理它们。这是吞吐量和延迟之间的权衡\n# table.exec.mini-batch.enabled=true\n## 状态缓存时间\n# table.exec.mini-batch.allow-latency=5s\n## 状态最大缓存条数\n# table.exec.mini-batch.size=5000\n\n## 是否开启Local-Global 聚合。前提需要开启minibatch\n## 聚合是为解决数据倾斜问题提出的，类似于 MapReduce 中的 Combine + Reduce 模式\n# table.optimizer.agg-phase-strategy=TWO_PHASE\n\n## 是否开启拆分 distinct 聚合\n## Local-Global 可以解决数据倾斜，但是在处理 distinct 聚合时，其性能并不令人满意。\n## 如：SELECT day, COUNT(DISTINCT user_id) FROM T GROUP BY day 如果 distinct key （即 user_id）的值分布稀疏，建议开启\n# table.optimizer.distinct-agg.split.enabled=true\n\n\n## Flink算子chaining开关。默认为true。排查性能问题时会暂时设置成false，但降低性能。\n# pipeline.operator-chaining=true\n\n\n## 提交端的python环境配置。\npython.executable=python3\n##python worker端 python 环境\npython.client.executable=python3', 'taskType': 0, 'taskVersions': [], 'taskVersionsStr': '[]', 'tenantId': 1, 'updateSource': True, 'userId': 1, 'version': 0, 'whereToEnter': 0, 'preSave': True}
 
-# print(json.dumps(ca,ensure_ascii=False))
+
+# print(json.dumps(ca1, ensure_ascii=False))
+# print(json.loads(ca1))
+# print(json.dumps(json.loads(ca1)))
+
+# mysql_column = json.loads(ca)
+# source_columns = []
+# target_columns = []
+# c = 1
+# for i in mysql_column['data']:
+#     source_columns.append({'id': c, 'name': i['key'], 'meta': False})
+#     target_columns.append({'id': i['key'], 'name': i['key'], 'type': i['type']})
+#     c = c + 1
+#
+# print(source_columns)
+# print(target_columns)
+
 
 
 # with open('./ca.json', 'r') as jsonLoads:
@@ -191,9 +210,83 @@ def commonJson(reader, writer, setting):
 # print(l_ca)h
 
 #
-streamTaskDirtyDataManageVO = dict(linkInfo=dict(sourceId=57),
-                                   logPrintInterval=1, maxCollectFailedRows=100,
-                                   maxRows=100, taskId=11)
-ud = {}
-ud.update(a=streamTaskDirtyDataManageVO)
-print(ud)
+# streamTaskDirtyDataManageVO = dict(linkInfo=dict(sourceId=57),
+#                                    logPrintInterval=1, maxCollectFailedRows=100,
+#                                    maxRows=100, taskId=11)
+# ud = {}
+# ud.update(a=streamTaskDirtyDataManageVO)
+# print(ud)
+
+# import datetime
+# a=datetime.datetime(2018,9,11)
+# b=datetime.datetime(2019,8,11)
+# print(a-b)
+#
+#
+# import time
+#
+# def demo(day1, day2):
+#     time_array1 = time.strptime(day1, "%Y-%m-%d")
+#     timestamp_day1 = int(time.mktime(time_array1))
+#     time_array2 = time.strptime(day2, "%Y-%m-%d")
+#     timestamp_day2 = int(time.mktime(time_array2))
+#     result = (timestamp_day2 - timestamp_day1) // 60 // 60 // 24
+#     return result
+#
+# day1 = "2019-08-11"
+# day2 = "2018-09-11"
+#
+# day_diff = demo(day1, day2)
+# print("两个日期的间隔天数：{} ".format(day_diff))
+
+# from datetime import datetime
+#
+# date1_str = input("请输入第一个日期 (格式：YYYY-MM-DD):")
+# date2_str = input("请输入第二个日期 (格式：YYYY-MM-DD):")
+#
+# date1 = datetime.strptime(
+# date1_str,"%Y-%m-%d")
+# date2 = datetime.strptime(
+# date2_str,"%Y-%m-%d")
+#
+# delta = date2 - date1
+# print("两个日期之间相隔的天数为：", delta.days)
+# is_existing = False
+# catalog_list = [['4', '5', '6'], ['1', '2', '3', '4']]
+#
+# for _ in catalog_list:
+#     if is_existing is True:
+#         print(f"StreamFlink: catalog already exists")
+#         break
+#     children_list = _
+#     for b in children_list:
+#         if b == '5':
+#             is_existing = True
+#             break
+#
+# print(is_existing)
+
+from faker import Faker
+fake = Faker("zh_CN")
+
+random_faker = [
+    (i, fake.random.randint(1, 1000), fake.name()) for i in range(1, 10)
+]
+
+print(random_faker)
+
+list1 = [
+    {
+        "table": "automation.stream_mysql_ogg_one",
+        "op_type": "I",
+        "op_ts": "2022-11-05 18:45:36.000000",
+        "current_ts": "2022-10-05 18:45:36.000000",
+        "pos": "00000000000000002928",
+        "after": {"id": i, "tinyint_data": 2, "int_data": 2, "bigint_data": 2, "decimal_data": 2, "float_data": 2,
+                  "double_data": "2.2", "varchar_data": "varchar_data", "char_data": "c", "date_data": "2022-07-14",
+                  "time_data": "10:52:34", "timestamp_data": "2022-07-16 09:09:56", "name": "name_1", "age": 181}
+    } for i in range(1, 10)
+]
+
+
+

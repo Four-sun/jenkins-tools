@@ -2,7 +2,7 @@
 # --- coding: utf-8 ---
 # @Time : 2021/6/3 7:29 下午
 # @Author : FanShu
-# @Site : 
+# @Site :
 # @File : requestsFunc.py
 # @Software: PyCharm
 import json
@@ -134,9 +134,10 @@ session = requests.session()
 
 
 def login():
-    url = 'http://172.16.23.228:8006/uic/api/v2/account/login'
-    headers = "{'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}"
-    body = "username=admin%40dtstack.com&password=iSTKGjbPmoDjzxPWbaQD3sZczty%2FunqLuT%2F9Y%2Fnd8b9zv2hqjf8hzYlHMtPiqfhjW1ZTKUQjZ7kpb24D8HQVN7aEQqzcw6vW5gwLBESR%2FN5PniDEkEhgf8NHyXLC80egrR9O7KiXAXyhwnsWoV3EVyu0iONwmF1Q9A2kaym6JQw%3D&verify_code=123"
+    url = 'http://portalfront-test-stream-dev-test53-0106-streamapp.base60.devops.dtstack.cn/uic/api/v2/account/login'
+    headers = "{'Content-Type': 'application/json;charset=utf-8'}"
+    # body = "username=admin%40dtstack.com&password=iSTKGjbPmoDjzxPWbaQD3sZczty%2FunqLuT%2F9Y%2Fnd8b9zv2hqjf8hzYlHMtPiqfhjW1ZTKUQjZ7kpb24D8HQVN7aEQqzcw6vW5gwLBESR%2FN5PniDEkEhgf8NHyXLC80egrR9O7KiXAXyhwnsWoV3EVyu0iONwmF1Q9A2kaym6JQw%3D&verify_code=123"
+    body = "username=admin%40dtstack.com&password=0490aee16ff8133563663e1aaa898bb282e17963564e1fe0a46365225823643d81887e78a156a4dba54de8b0a12123f54412c08b5ac77654b58c295d0b9193f8d9b7649a622b4eb4d26365f7d295a62ba9717e05c6860aaf2d8fbca848ec6be752d90ad91aaea566d3a68cfb&verify_code=123&key=1692099660658609095"
     bodyData = {'method': 'post', 'url': url, 'body': body, 'headers': headers}
     req = send_requests(session, data=bodyData)
     req_text = json.loads(req['text'])
