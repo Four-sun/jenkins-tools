@@ -52,8 +52,8 @@ INSERT INTO `da_api_auth`(`id`, `api_id`, `auth_id`, `tenant_id`, `begin_time`, 
 
 -- da_api_apply
 INSERT INTO `da_api_apply`(`id`, `tenant_id`, `api_id`, `user_id`, `apply_content`, `reply_content`, `reply_time`, `status`, `gmt_create`, `gmt_modified`, `is_deleted`, `call_limit`, `begin_time`, `end_time`, `project_id`, `token`) VALUES
-(1, 1, 1, 1, 'test', NULL, '2021-01-11 10:51:24', 1, '2020-12-14 19:44:42', '2021-01-11 10:51:24', 0, -1, NULL, NULL, 1, NULL),
-(2, 1, 1, 2, 'test', NULL, '2021-01-11 10:51:24', 0, '2020-12-14 19:44:42', '2021-01-11 10:51:24', 0, -1, NULL, NULL, 1, NULL);
+(1, 1, 1, 1, 'ci_5.3', NULL, '2021-01-11 10:51:24', 1, '2020-12-14 19:44:42', '2021-01-11 10:51:24', 0, -1, NULL, NULL, 1, NULL),
+(2, 1, 1, 2, 'ci_5.3', NULL, '2021-01-11 10:51:24', 0, '2020-12-14 19:44:42', '2021-01-11 10:51:24', 0, -1, NULL, NULL, 1, NULL);
 
 -- da_user
 INSERT INTO `da_user`(`id`, `dtuic_user_id`, `user_name`, `email`, `status`, `gmt_create`, `gmt_modified`, `is_deleted`, `phone_number`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `da_user`(`id`, `dtuic_user_id`, `user_name`, `email`, `status`, `gm
 -- da_api_catalogue
 INSERT INTO `da_api_catalogue`(`id`, `tenant_id`, `pid`, `node_name`, `order_val`, `level`, `gmt_create`, `gmt_modified`, `is_deleted`, `project_id`) VALUES
 (0, 0, -1, 'API管理', 0, 0, '2020-11-25 14:38:45', '2020-11-25 14:38:45', 0, NULL),
-(1, 1, 0, 'test', 0, 1, '2021-01-11 10:52:52', '2021-01-11 10:52:52', 0, 1),
+(1, 1, 0, 'ci_5.3', 0, 1, '2021-01-11 10:52:52', '2021-01-11 10:52:52', 0, 1),
 (3, 1, 0, '分组1', 0, 1, '2020-11-25 14:59:30', '2020-11-25 14:59:30', 0, 1),
 (4, 1, 0, '没有关联的分组', 0, 1, '2020-11-25 14:59:30', '2020-11-25 14:59:30', 0, 1);
 

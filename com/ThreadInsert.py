@@ -57,7 +57,7 @@ class ThreadInsert(object):
         st = time.time()
         con = self.pool.connection()
         cur = con.cursor()
-        sql = "TRUNCATE TABLE test"
+        sql = "TRUNCATE TABLE ci_5.3"
         cur.execute(sql)
         con.commit()
         cur.close()

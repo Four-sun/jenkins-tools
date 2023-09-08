@@ -1,11 +1,11 @@
-db_name: test
+db_name: ci_5.3
 field_count: 100
 host: 172.16.100.186
-jdbcUrl: jdbc:mysql://172.16.100.186:3306/test
+jdbcUrl: jdbc:mysql://172.16.100.186:3306/ci_5.3
 password: Abc123456
 port: '3306'
 reader_count: 100
 table: streamFactorOne
-username: test
+username: ci_5.3
 writeMode: insert
 writer_name: mysqlwriter

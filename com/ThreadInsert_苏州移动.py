@@ -30,7 +30,7 @@ class ThreadInsert(object):
             user='root',
             port=3306,
             passwd='123456',
-            db='test',
+            db='ci_5.3',
             charset="utf8",
             use_unicode=True)
         return pool

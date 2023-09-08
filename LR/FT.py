@@ -10,12 +10,12 @@ dataset = loadtxt('pima-indians-diabetes.csv', delimiter=",")
 # split data into X and y
 X = dataset[:,0:8]
 Y = dataset[:,8]
-# split data into train and test sets
+# split data into train and ci_5.3 sets
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=7)
 # fit model on all training data
 model = XGBClassifier()
 model.fit(X_train, y_train)
-# make predictions for test data and evaluate
+# make predictions for ci_5.3 data and evaluate
 y_pred = model.predict(X_test)
 predictions = [round(value) for value in y_pred]
 accuracy = accuracy_score(y_test, predictions)

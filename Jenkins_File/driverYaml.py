@@ -10,12 +10,12 @@ import json
 import os
 
 # writer_name = 'mysqlwriter'
-# username = 'test'
+# username = 'ci_5.3'
 # password = 'Abc123456'
 # host = '172.16.100.186'
 # port = '3306'
-# db_name = 'test'
-# jdbcUrl = 'jdbc:mysql://172.16.100.186:3306/test'
+# db_name = 'ci_5.3'
+# jdbcUrl = 'jdbc:mysql://172.16.100.186:3306/ci_5.3'
 # table = 'streamFactorOne'
 # writeMode = 'insert'
 # reader_count = 100
@@ -24,9 +24,9 @@ import os
 yamlPath = 'mysqldb.yaml'
 # fw = open(yamlPath, 'w', encoding='utf-8')
 #
-# mysql_env = {'writer_name': 'mysqlwriter', 'username': 'test', 'password': 'Abc123456',
+# mysql_env = {'writer_name': 'mysqlwriter', 'username': 'ci_5.3', 'password': 'Abc123456',
 #                                'host': '172.16.100.186',
-#                                'port': '3306', 'db_name': 'test', 'jdbcUrl': 'jdbc:mysql://172.16.100.186:3306/test',
+#                                'port': '3306', 'db_name': 'ci_5.3', 'jdbcUrl': 'jdbc:mysql://172.16.100.186:3306/ci_5.3',
 #                                'table': 'streamFactorOne', 'writeMode': 'insert', 'reader_count': 100,
 #                                'field_count': 100}
 #

@@ -2,7 +2,7 @@
 # --- coding: utf-8 ---
 # @Time : 2021/6/18 12:01 下午
 # @Author : FanShu
-# @Site : 
+# @Site :
 # @File : timeFIle.py
 # @Software: PyCharm
 import json
@@ -43,4 +43,4 @@ def current_timestamp():
 
 
 # print(current_time(), current_datetime(), current_timestamp())
-print('[test].[fanshuTestOne]'.replace('[', '').replace(']', ''))
+print('[ci_5.3].[fanshuTestOne]'.replace('[', '').replace(']', ''))

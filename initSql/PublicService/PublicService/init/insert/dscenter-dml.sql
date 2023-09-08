@@ -344,7 +344,7 @@ VALUES
     (140, 'address', 'Broker URL', 'Input', 1, 0, NULL, NULL, NULL, 1, '', NULL, NULL, NULL, 'EMQ', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
     (141, 'username', '用户名', 'Input', 0, 0, NULL, NULL, NULL, 0, '', NULL, NULL, NULL, 'EMQ', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
     (142, 'password', '密码', 'Password', 0, 0, NULL, NULL, NULL, 0, '', NULL, NULL, NULL, 'EMQ', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
-    (143, 'url', 'URL', 'Input', 1, 0, NULL, NULL, NULL, 1, '', '多个鉴权参数将以”&“连接拼接在URL后，例如：ws://host:port/test?Username=sanshui&password=xx', NULL, NULL, 'WebSocket', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
+    (143, 'url', 'URL', 'Input', 1, 0, NULL, NULL, NULL, 1, '', '多个鉴权参数将以”&“连接拼接在URL后，例如：ws://host:port/ci_5.3?Username=sanshui&password=xx', NULL, NULL, 'WebSocket', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
     (144, 'webSocketParams', '鉴权参数', 'WebSocketSub', 0, 0, NULL, NULL, NULL, 0, '', NULL, NULL, NULL, 'WebSocket', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
     (145, 'url', 'URL', 'Input', 1, 0, NULL, 'host:port', NULL, 1, '', NULL, NULL, NULL, 'Socket', 0, '2021-03-23 20:38:07', '2021-03-30 16:08:46', 0, 0,''),
     (146, 'protocol', 'Protocol', 'Input', 1, 1, NULL, NULL, NULL, 1, '', NULL, NULL, NULL, 'FTP', 0, '2021-03-23 20:38:06', '2021-03-30 16:08:46', 0, 0,''),

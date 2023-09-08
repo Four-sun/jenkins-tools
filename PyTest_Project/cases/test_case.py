@@ -14,7 +14,7 @@ import pytest
 # # 定义一个测试数据
 # def data():
 #     str = "python"
-#     assert "test" in str
+#     assert "ci_5.3" in str
 #     return str
 
 #

@@ -15,7 +15,7 @@
 #
 # print(parse.quote(urlUnquote, safe=""))
 #
-# # urlQuote = '{"job":{"content":[{"reader":{"parameter":{"column":[{"name":"id","type":"id"},{"name":"name","type":"string"},{"name":"age","type":"int"}],"sliceRecordCount":["100000"]},"name":"streamreader"},"writer":{"parameter":{"postSql":[],"password":"Abc123456","column":[{"name":"id","type":"INT","key":"id"},{"name":"name","type":"VARCHAR","key":"name"},{"name":"age","type":"INT","key":"age"}],"connection":[{"jdbcUrl":"jdbc:mysql://172.16.100.186:3306/test","table":["datafactory_Result"]}],"writeMode":"insert","batchSize":1024,"username":"test","preSql":[]},"name":"mysqlwriter"}}],"setting":{"restore":{"maxRowNumForCheckpoint":0,"isRestore":false,"restoreColumnName":"","restoreColumnIndex":0},"log":{"path":"","level":"debug","pattern":"","isLogger":false},"errorLimit":{"record":100},"speed":{"bytes":0,"channel":1}}}}'
+# # urlQuote = '{"job":{"content":[{"reader":{"parameter":{"column":[{"name":"id","type":"id"},{"name":"name","type":"string"},{"name":"age","type":"int"}],"sliceRecordCount":["100000"]},"name":"streamreader"},"writer":{"parameter":{"postSql":[],"password":"Abc123456","column":[{"name":"id","type":"INT","key":"id"},{"name":"name","type":"VARCHAR","key":"name"},{"name":"age","type":"INT","key":"age"}],"connection":[{"jdbcUrl":"jdbc:mysql://172.16.100.186:3306/ci_5.3","table":["datafactory_Result"]}],"writeMode":"insert","batchSize":1024,"username":"ci_5.3","preSql":[]},"name":"mysqlwriter"}}],"setting":{"restore":{"maxRowNumForCheckpoint":0,"isRestore":false,"restoreColumnName":"","restoreColumnIndex":0},"log":{"path":"","level":"debug","pattern":"","isLogger":false},"errorLimit":{"record":100},"speed":{"bytes":0,"channel":1}}}}'
 # #
 # # print(urllib.parse.quote(urlQuote))
 

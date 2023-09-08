@@ -36,7 +36,7 @@ class Mapper(object):
         sql += '<sql id="select_where_fragment">\n'
         sql += '<trim prefix="WHERE" prefixOverrides="AND |OR ">\n'
         for name in names:
-            sql += '<if test="model.{name} != null">'.format(name=self.convertColumn(name)) +'\n'
+            sql += '<if ci_5.3="model.{name} != null">'.format(name=self.convertColumn(name)) +'\n'
             sql += '   AND ' + name + ' = #{model.' + self.convertColumn(name) + '}' +'\n'
             sql += '</if>\n'
         sql += '</trim>\n'
@@ -49,7 +49,7 @@ class Mapper(object):
         sql += '<sql id="update_fragment">\n'
         sql += '<set>\n'
         for name in names:
-            sql += '   <if test="{name} != null">'.format(name=self.convertColumn(name)) + '\n'
+            sql += '   <if ci_5.3="{name} != null">'.format(name=self.convertColumn(name)) + '\n'
             sql += '   ' + name + ' = #{' + self.convertColumn(name) + '},\n'
             sql += '</if>\n'
         sql += '</set>\n'
@@ -121,19 +121,19 @@ class Mapper(object):
         <include refid="select_content_fragment"/>
         FROM ''' + table_name + '''
         <include refid="select_where_fragment"/>
-        <if test="orderBy != null and sort != null">
+        <if ci_5.3="orderBy != null and sort != null">
             order by ${orderBy} ${sort}
         </if>
-        <if test="orderBy != null and sort == null">
+        <if ci_5.3="orderBy != null and sort == null">
             order by ${orderBy} desc
         </if>
-        <if test="start != null and pageSize != null">
+        <if ci_5.3="start != null and pageSize != null">
             limit #{start} , #{pageSize}
         </if>
-        <if test="start == null and pageSize != null">
+        <if ci_5.3="start == null and pageSize != null">
             limit #{pageSize}
         </if>
-        <if test="start == null and pageSize == null">
+        <if ci_5.3="start == null and pageSize == null">
             limit 1000
         </if>
         </select>

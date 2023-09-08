@@ -167,7 +167,7 @@ function check_incrementSql() {
 
 function get_project() {
     if [ -n $JOB_NAME ]; then
-      job_base_name=`echo $JOB_NAME |  awk -F '-test' '{print $1}'`
+      job_base_name=`echo $JOB_NAME |  awk -F '-ci_5.3' '{print $1}'`
       printf $job_base_name
     else
       echo "ERROR JOB_NAME NOT FOUND"
