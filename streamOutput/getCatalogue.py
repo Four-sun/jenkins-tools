@@ -17,8 +17,8 @@ class cataLogue():
     def __init__(self):
         self.Cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-09-08+10%3A25%3A00; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDM5OTEwMCwiaWF0IjoxNjkzODgwNzA0fQ.iXFOvABg7GvF5-qgKIguKcue9xSz3J6i82GIZbJRAlA; dt_is_tenant_admin=true; dt_is_tenant_creator=false; sysLoginType=%7B%22sysType%22%3A0%2C%22sysId%22%3A1%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; JSESSIONID=EFABF81E40FD1645696B6A58FB0AE79C; DT_SESSION_ID=5771ca8c-df52-4a18-8f21-7aebeb58b729'
         self.request_url = "http://uic.dttestenv.cn/"
-        self.nodePid = 719
-        self.project_id = 27
+        self.nodePid = 555
+        self.project_id = 39
         self.headers = {
             'Accept': '*/*',
             'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -32,8 +32,8 @@ class cataLogue():
         }
         self.new_body = None
         self.new_list = None
-        self.current_path = '/Users/four/Downloads/four_git/jenkins-tools/jenkins-tools/streamOutput/test_5.3/stream_ui_test/'
-        self.cp_flink_task = None
+        self.current_path = '/Users/four/Downloads/four_git/jenkins-tools/jenkins-tools/streamOutput/test_5.3/test/'
+        self.cp_flink_task = []
 
     def getCatalogue(self, nodePid=None):
         """
@@ -54,38 +54,43 @@ class cataLogue():
         :return: 获取getCatalogue接口任务信息
         """
         cataLogue = self.getCatalogue()
+        id_list_1 = [x['id'] for x in cataLogue if x['type'] == 'folder']
         id_list = [x['id'] for x in cataLogue if x['type'] == 'folder']
         new_list = [dict(id=x['id'], name=x['name'], parentId=x['parentId']) for x in cataLogue if
                     x['type'] == 'folder']
-        for _ in id_list:
+        for _ in id_list_1:
             if len(self.getCatalogue(_)) < 1:
                 continue
             else:
-                low_catalogue = self.getCatalogue(_)[0]
-            if low_catalogue['type'] == "folder":
-                id_list.append(low_catalogue['id'])
-                new_list.append(
-                    dict(id=low_catalogue['id'], name=low_catalogue['name'], parentId=low_catalogue['parentId']))
-                print(f"low_catalogue:{low_catalogue}")
-                if len(self.getCatalogue(low_catalogue['id'])) < 1:
-                    continue
-                else:
-                    level_3_catalogue = self.getCatalogue(low_catalogue['id'])[0]
-                if level_3_catalogue['type'] == "folder":
-                    print(f"level_3_catalogue this level:{level_3_catalogue}")
-                    id_list.append(low_catalogue['id'])
-                    new_list.append(
-                        dict(id=low_catalogue['id'], name=low_catalogue['name'], parentId=low_catalogue['parentId']))
-                    continue
-                else:
-                    task_id = level_3_catalogue['id']
-                    task_name = level_3_catalogue['name']
-                    print(f"level_3_catalogue id:{task_id}, name:{task_name}")
-                continue
+                low_catalogue = self.getCatalogue(_)
+                for _ in low_catalogue:
+                    if _['type'] == "folder":
+                        id_list.append(_['id'])
+                        new_list.append(
+                            dict(id=_['id'], name=_['name'], parentId=_['parentId']))
+                        print(f"low_catalogue:{_}")
+                        if len(self.getCatalogue(_['id'])) < 1:
+                            continue
+                        else:
+                            level_3_catalogue = self.getCatalogue(_['id'])
+                            for i in level_3_catalogue:
+                                if i['type'] == "folder":
+                                    print(f"level_3_catalogue this level:{i}")
+                                    id_list.append(i['id'])
+                                    new_list.append(
+                                        dict(id=i['id'], name=i['name'], parentId=i['parentId']))
+                                    continue
+                                else:
+                                    task_id = i['id']
+                                    task_name = i['name']
+                                    print(f"level_3_catalogue id:{task_id}, name:{task_name}")
+                                continue
         self.new_list = new_list
-        return id_list
+        print('new_list', new_list)
+        print(set(id_list))
+        return set(id_list)
 
-    def getTaskList(self):
+    def getTaskList(self, all=None):
         """
         :return: 获取全部任务列表信息
         """
@@ -98,16 +103,45 @@ class cataLogue():
                 if i['type'] == "folder":
                     continue
                 else:
-                    task_id = i['id']
-                    task_name = i['name']
-                    parent_id = i['parentId']
-                    create_model = i['createModel']
-                    task_type = i['taskType']
-                    print(f"last_catalogue id:{task_id}, name:{task_name}, parent_id:{parent_id},"
-                          f" create_model:{create_model}, task_type{task_type}")
-                    task_list.append(task_id)
-                    new_task_list.append(dict(task_id=task_id, task_name=task_name, parentId=parent_id,
-                                              create_model=create_model, task_type=task_type))
+                    if all:
+                        # 获取所有任务
+                        task_id = i['id']
+                        task_name = i['name']
+                        parent_id = i['parentId']
+                        create_model = i['createModel']
+                        task_type = i['taskType']
+                        print(f"last_catalogue id:{task_id}, name:{task_name}, parent_id:{parent_id},"
+                              f" create_model:{create_model}, task_type{task_type}")
+                        task_list.append(task_id)
+                        new_task_list.append(dict(task_id=task_id, task_name=task_name, parentId=parent_id,
+                                                  create_model=create_model, task_type=task_type))
+                    else:
+                        # 采集任务-向导模式不需要
+                        if i['taskType'] == 0:
+                            task_id = i['id']
+                            task_name = i['name']
+                            parent_id = i['parentId']
+                            create_model = i['createModel']
+                            task_type = i['taskType']
+                            print(f"last_catalogue id:{task_id}, name:{task_name}, parent_id:{parent_id},"
+                                  f" create_model:{create_model}, task_type{task_type}")
+                            task_list.append(task_id)
+                            new_task_list.append(dict(task_id=task_id, task_name=task_name, parentId=parent_id,
+                                                      create_model=create_model, task_type=task_type))
+                        elif i['taskType'] == 11 and i['createModel'] == 1:
+                            task_id = i['id']
+                            task_name = i['name']
+                            parent_id = i['parentId']
+                            create_model = i['createModel']
+                            task_type = i['taskType']
+                            print(f"last_catalogue id:{task_id}, name:{task_name}, parent_id:{parent_id},"
+                                  f" create_model:{create_model}, task_type{task_type}")
+                            task_list.append(task_id)
+                            new_task_list.append(dict(task_id=task_id, task_name=task_name, parentId=parent_id,
+                                                      create_model=create_model, task_type=task_type))
+                        else:
+                            pass
+
         return new_task_list
 
     def getTaskById(self, task_id):
@@ -143,16 +177,16 @@ class cataLogue():
         # 循环构建文件夹
         for _ in self.new_list:
             if _['parentId'] == self.nodePid:
-                print("this is first leven")
                 path = os.path.join(self.current_path, _['name'])
                 create_package(path)
                 new_body.append(dict(id=_['id'], name=_['name'], parentId=_['parentId'], path=path))
+                print(f"this path {path} ")
             else:
-                c = [x['name'] for x in self.new_list if x['id'] == _['parentId']]
-                print("this is second leven")
-                path = os.path.join(self.current_path, c[0], _['name'])
+                c_path = [x['path'] for x in new_body if x['id'] == _['parentId']]
+                path = os.path.join(c_path[0], _['name'])
                 create_package(path)
                 new_body.append(dict(id=_['id'], name=_['name'], parentId=_['parentId'], path=path))
+                print(f"this path {path} ")
         self.new_body = new_body
         return new_body
 
@@ -190,9 +224,9 @@ class cataLogue():
                       cp_task_info['version'], cp_task_info['readWriteLockVO'], cp_task_info['componentVersion']
                   )
         print("payload:", payload)
-        response = requests.request("POST", url, headers=self.headers, data=payload)
-        response_text = json.loads(response.text)
-        data = response_text['data']
+        requests.request("POST", url, headers=self.headers, data=payload)
+        self.cp_flink_task.append(cp_task_id)
+        return
 
     def deleteCopyFlinkTask(self, task_id):
         """
@@ -200,7 +234,7 @@ class cataLogue():
         """
         url = f"{self.request_url}api/streamapp/service/streamTask/deleteTask"
         payload = "{\"id\":%s}" % task_id
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=self.headers, data=payload)
         response_text = json.loads(response.text)
         data = response_text['data']
         print('deleteCopyFlinkTask', data)
@@ -211,20 +245,21 @@ class cataLogue():
         type: 11
         createModel: 0
         """
-        all_task = self.getTaskList()
+        all_task = self.getTaskList(all=True)
         flink_task = [x for x in all_task if x['task_type'] == 11 and x['create_model'] == 0]
 
         for _ in flink_task:
-            print('flink_task:', _)
             self.guideToTemplate(_['task_id'], _['task_name'], _['parentId'])
-
-        self.cp_flink_task = flink_task
 
     def createTaskText(self):
         """
         :return: 创建本地文件
         """
+        # 实时采集任务复制
+        self.flinkXTask()
+        # 构建文件夹
         self.creatFileTask()
+        # 获取全部任务参数
         task_list = self.getTaskList()
         # 循环写入文件
         for _ in task_list:
@@ -242,6 +277,7 @@ class cataLogue():
                 o.write(task_info['sqlText'])
             print(o.read())
 
+        # 循环删除被复制出的文件
         for _ in self.cp_flink_task:
             self.deleteCopyFlinkTask(_)
 
@@ -253,7 +289,9 @@ if __name__ == '__main__':
     # logue.getTaskInfo()
     # logue.getTaskList()
     # logue.creatFileTask()
-    logue.createTaskText()
     # logue.copyTask()
-    # logue.guideToTemplate()
-    logue.flinkXTask()
+    # logue.guideToTemplate(1415, "FlinkX112_sinkHive", 779)
+    # logue.flinkXTask()
+    # logue.deleteCopyFlinkTask()
+    logue.createTaskText()
+
