@@ -1,0 +1,86 @@
+CREATE TABLE sourceTableOne(
+    id int,
+    name varchar,
+    proc_time AS PROCTIME() 
+ )WITH(
+    'properties.bootstrap.servers'='172.16.100.109:9092',
+    'connector'='kafka-x',
+    'scan.parallelism'='1',
+    'format'='json',
+    'topic'='fanshu2',
+    'scan.startup.mode'='latest-offset'
+ );
+CREATE TABLE hyperbaseSideTable(
+    id int,
+    cf row<id int,
+    name varchar>,
+    PRIMARY KEY(id) NOT ENFORCED
+ )WITH(
+    'lookup.cache.max-rows'='10000',
+    'properties.jaasSectionName'='Client',
+    'properties.java.security.krb5.conf'='krb5.conf',
+    'properties.useLocalFile'='true',
+    'properties.hbase.security.authorization'='true',
+    'security.kerberos.krb5conf'='krb5.conf',
+    'properties.hbase.regionserver.kerberos.principal'='hbase/_HOST@TDH',
+    'properties.hbase.security.java.security.krb5.conf'='krb5.conf',
+    'properties.hbase.master.kerberos.principal'='hbase/_HOST@TDH',
+    'security.kerberos.keytab'='inceptor.keytab',
+    'properties.principalFile'='inceptor.keytab',
+    'properties.hbase.security.auth.enable'='true',
+    'properties.hbase.security.principal'='hive/tdh-node02@TDH',
+    'zookeeper.quorum'='tdh-node02,tdh-node03,tdh-node01',
+    'zookeeper.znode.parent'='/hyperbase1',
+    'security.kerberos.principal'='hive/tdh-node02@TDH',
+    'properties.hbase.security.authentication'='kerberos',
+    'properties.principal'='hive/tdh-node02@TDH',
+    'connector'='hyperbase-x',
+    'lookup.cache-type'='LRU',
+    'lookup.parallelism'='1',
+    'lookup.cache.ttl'='60000',
+    'properties.hbase.security.principalFile'='inceptor.keytab',
+    'table-name'='stream_test_one',
+    'properties.isAddSecurityModule'='true'
+ );
+CREATE TABLE kafkaResultOne(
+    id int,
+    name varchar
+ )WITH(
+    'properties.bootstrap.servers'='172.16.100.109:9092',
+    'connector'='kafka-x',
+    'format'='json',
+    'topic'='fanshu7',
+    'sink.parallelism'='1'
+ );
+-- name hyperbase_test_1
+-- type FlinkSQL
+-- author admin@dtstack.com
+-- create time 2023-03-27 17:51:52
+-- desc
+-- insert
+-- into
+--     resultTableOne
+--     SELECT
+--         st.id as rowkey,
+--         ROW(id,
+--         name) as cf
+--     from
+--         sourceTableOne st;
+-- CREATE TABLE sink(
+--     id   int,
+--     name varchar
+--  )WITH(
+--     'connector'='stream-x'
+--  );
+
+INSERT 
+INTO
+    kafkaResultOne
+    SELECT
+        st.id as id,
+        b.cf.name as name 
+    FROM
+        sourceTableOne st          
+    LEFT JOIN
+        hyperbaseSideTable FOR SYSTEM_TIME AS OF st.proc_time AS b 
+            ON st.id = b.id;

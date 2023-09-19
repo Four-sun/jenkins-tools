@@ -63,7 +63,7 @@ def delete_5_1():
 def delete_5_2():
 
     url = "http://172.16.101.201/api/streamapp/service/streamCatalogue/getCatalogue"
-    cookie = "dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-08-21+15%3A16%3A24; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5Mjg2MTM4NCwiaWF0IjoxNjkyMzQyOTkwfQ.i6MV9z9gCOdgIxT8Z1hPuLr-LFMNluG4eOSLrtOJykI; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=8D38931F0D4E4DF26E1E08A58819BABB; DT_SESSION_ID=eb54e50b-430b-47bc-8feb-0fe4c31723f3"
+    cookie = "dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-09-14+14%3A55%3A47; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDkzMzc0NywiaWF0IjoxNjk0NDE1MzUzfQ.rOK5s2LNPPrCRgSRWQQoVoNnP8M3GmWerye6W5eA3Wo; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=56A0CCDA3C09F1DAF850E02E5D68F45D; DT_SESSION_ID=80bdf748-8d8f-4ff3-9244-2286a759982d"
     payload = "{\"nodePid\":79,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
     headers = {
       'Accept': '*/*',
@@ -113,7 +113,7 @@ def delete_5_2():
 def delete_5_3():
 
     url = "http://172.16.82.4/api/streamapp/service/streamCatalogue/getCatalogue"
-    cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-09-08+10%3A37%3A05; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDM5OTgyNSwiaWF0IjoxNjkzODgxNDM1fQ.AhjEwy2X47gc0vYdtRTsHIVKi5-7nORl7jUYcxLA9g4; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=AA0B7EC444F23FD88943EF899BF71047; DT_SESSION_ID=cec5bd8d-d9c8-4e73-bacd-9f68ed13b739'
+    cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-09-14+15%3A00%3A51; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDkzNDA1MSwiaWF0IjoxNjk0NDE1NjU3fQ.Se4lmRF7ij9f0rQNh5E2R1NK77gEv_LVIkUW8_CT0wc; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=BD0894825C9B6CFB0DA4C2569854DEE9; DT_SESSION_ID=b846feb2-0771-4722-9537-4207b5623088'
 
     payload = "{\"nodePid\":79,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
     headers = {
@@ -273,4 +273,4 @@ def delete_6_1():
 
 if __name__ == '__main__':
 
-    delete_5_3()
+    delete_5_2()
