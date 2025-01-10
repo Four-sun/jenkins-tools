@@ -54,9 +54,7 @@ with open(transform_file, 'r', encoding='utf-8') as file:
                 new_name = parts[1].strip().strip('"').strip('",')  # 去除可能的引号和空白符
                 # 输出old_name和new_name
                 print(f'Old Name: {old_name}, New Name: {new_name}')
-
-                json_file_update(json_file_name,old_name,new_name)
-
+                json_file_update(json_file_name, old_name, new_name)
             else:
                 print(f'Line format error: {line}')
 
