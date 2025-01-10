@@ -113,7 +113,7 @@ def delete_5_2():
 def delete_5_3():
 
     url = "http://172.16.82.4/api/streamapp/service/streamCatalogue/getCatalogue"
-    cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-09-14+15%3A00%3A51; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDkzNDA1MSwiaWF0IjoxNjk0NDE1NjU3fQ.Se4lmRF7ij9f0rQNh5E2R1NK77gEv_LVIkUW8_CT0wc; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=BD0894825C9B6CFB0DA4C2569854DEE9; DT_SESSION_ID=b846feb2-0771-4722-9537-4207b5623088'
+    cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-11-23+19%3A32%3A14; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTcwMDk5ODMzNCwiaWF0IjoxNzAwNDc5OTQxfQ.T-KcCVZBIl8hCOII_JJNDp_Mu8ySAQ-KgF3fIwmuYys; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=70CEA7B0859F3B8DB903037FA2B65DD4; DT_SESSION_ID=0723964d-4929-42dd-9919-9142b2be7bfb'
 
     payload = "{\"nodePid\":79,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
     headers = {
@@ -166,11 +166,11 @@ def delete_5_3():
 def delete_6_0():
     import requests
 
-    Cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-07-28+14%3A29%3A25; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; JSESSIONID=9E1626DEB08518FAB503D66ECB7CDA86; dt_tenant_id=10449; dt_tenant_name=DT_demo_hadoop2; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxMDQ0OSIsInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoiYWRtaW5AZHRzdGFjay5jb20iLCJleHAiOjE2OTEwNDQxNjUsImlhdCI6MTY5MDQ0MTczN30.FXFv6XmqHhz1qytpl9cR9emvEDdRFF626D2uN5SV_YE; dt_is_tenant_admin=true; dt_is_tenant_creator=true; DT_SESSION_ID=21e79ed0-ac94-460b-b1b7-f19b418cdee8'
+    Cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2024-04-25+11%3A51%3A39; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; DT_SESSION_ID=74b97290-e8a2-43f2-afe7-436fe4b243e2; dt_product_code=RDOS; dt_tenant_id=10449; dt_tenant_name=DT_demo_hadoop2; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxMDQ0OSIsInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoiYWRtaW5AZHRzdGFjay5jb20iLCJleHAiOjE3MTQ1MzU0OTksImlhdCI6MTcxMzc1Nzk0MH0.16kFYEY9M3YlIyZvE3OblYlr-geufSmzkG24h-AdEYc; dt_is_tenant_admin=true; dt_is_tenant_creator=true; JSESSIONID=73582D7F1C48DBE8EB71C181A2290928'
 
     url = "http://172.16.100.108/api/streamapp/service/streamCatalogue/getCatalogue"
 
-    payload = "{\"nodePid\":241,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
+    payload = "{\"nodePid\":381,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
     headers = {
         'Accept': '*/*',
         'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -183,7 +183,7 @@ def delete_6_0():
         'Pragma': 'no-cache',
         'Referer': 'http://172.16.100.108/stream/',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-        'X-Project-ID': '31'
+        'X-Project-ID': '51'
     }
 
 
@@ -223,9 +223,9 @@ def delete_6_0():
 def delete_6_1():
     import requests
 
-    url = "http://172.16.101.247/api/streamapp/service/streamCatalogue/getCatalogue"
-    cookie = "dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; sysLoginType=%7B%22sysId%22%3A1%2C%22sysName%22%3A%22UIC%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%22%2C%22sysType%22%3A0%7D; dt_cookie_time=2023-07-28+19%3A57%3A44; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5MDgwNDY2NCwiaWF0IjoxNjkwMjg2MjY4fQ.Tz6s7QNobg7iqvIktBDo8a1_WJXm7caOeFOS5-lJdRE; dt_is_tenant_admin=true; dt_is_tenant_creator=false; JSESSIONID=78BAE18F46C8A4B81B6B8D20C88B575D; DT_SESSION_ID=d7b0b8e8-4b03-49a5-b101-e31bb6cbda77"
-    payload = "{\"nodePid\":155,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
+    url = "http://172.16.100.108/api/streamapp/service/streamCatalogue/getCatalogue"
+    cookie = "dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_cookie_time=2023-10-13+16%3A10%3A34; sysLoginType=%7B%22sysId%22%3A1%2C%22sysType%22%3A0%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_product_code=RDOS; track_rdos=true; dt_tenant_id=10449; dt_tenant_name=DT_demo_hadoop2; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxMDQ0OSIsInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoiYWRtaW5AZHRzdGFjay5jb20iLCJleHAiOjE2OTc5NjIyMzQsImlhdCI6MTY5NjkyNTYwN30.TFPjVzRltuQH_U70wsuEvvcUlTu8PVg1d0uLuT2M_F8; dt_is_tenant_admin=true; dt_is_tenant_creator=true; JSESSIONID=3E8D92F56BAD5AB3975FC36D839E1A01; DT_SESSION_ID=368da1fa-2a8b-47ae-b842-ace3005abd57"
+    payload = "{\"nodePid\":241,\"catalogueType\":\"TaskDevelop\",\"isGetFile\":true}"
     headers = {
         'Accept': '*/*',
         'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -233,12 +233,12 @@ def delete_6_1():
         'Connection': 'keep-alive',
         'Content-Type': 'text/plain;charset=UTF-8',
         'Cookie': cookie,
-        'If-None-Match': '6.1.0-beta2-stream1684204558398',
-        'Origin': 'http://172.16.101.247',
+        # 'If-None-Match': '6.1.0-beta2-stream1684204558398',
+        'Origin': 'http://172.16.100.108',
         'Pragma': 'no-cache',
-        'Referer': 'http://172.16.101.247/stream/',
+        'Referer': 'http://172.16.100.108/stream/',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-        'X-Project-ID': '19'
+        'X-Project-ID': '31'
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -249,7 +249,7 @@ def delete_6_1():
 
     for _ in range(len(data)):
 
-        url = "http://172.16.101.247/api/streamapp/service/streamTask/deleteTask"
+        url = "http://172.16.100.108/api/streamapp/service/streamTask/deleteTask"
         payload = "{\"id\":%s}" % data[_]['id']
         headers = {
           'Accept': '*/*',
@@ -258,12 +258,12 @@ def delete_6_1():
           'Connection': 'keep-alive',
           'Content-Type': 'text/plain;charset=UTF-8',
             'Cookie': cookie,
-            'If-None-Match': '6.1.0-beta2-stream1684204558398',
-          'Origin': 'http://172.16.101.247',
+            # 'If-None-Match': '6.1.0-beta2-stream1684204558398',
+          # 'Origin': 'http://172.16.101.247',
           'Pragma': 'no-cache',
-          'Referer': 'http://172.16.101.247/stream/',
+          # 'Referer': 'http://172.16.101.247/stream/',
           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-          'X-Project-ID': '19'
+          'X-Project-ID': '31'
         }
 
         response = requests.request("POST", url, headers=headers, data=payload)
@@ -273,4 +273,4 @@ def delete_6_1():
 
 if __name__ == '__main__':
 
-    delete_5_2()
+    delete_6_0()

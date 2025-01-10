@@ -15,10 +15,11 @@ from package_open import Open
 class cataLogue():
 
     def __init__(self):
-        self.Cookie = 'experimentation_subject_id=IjUxODE1ZmJmLThkN2ItNDdmNi05ZTY2LTdhMmJkOTU3OWE5YSI%3D--c5f5c102530bf693c0cd51ac5be0e4893ae2d1b4; dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; sysLoginType=%7B%22sysId%22%3A1%2C%22sysName%22%3A%22UIC%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95%22%2C%22sysType%22%3A0%7D; dt_cookie_time=2023-09-14+19%3A27%3A21; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5NDk1MDAzNywiaWF0IjoxNjk0NDMxNjQ0fQ.xoP0_mAvF8-k1yQ6luIh21pzSqjsjsTsBWN_LkY1VFc; dt_is_tenant_admin=true; dt_is_tenant_creator=false; dt_product_code=RDOS; JSESSIONID=AF2E81123EE853B0600390EE5D19DA7C; DT_SESSION_ID=0ce42b8f-d2fd-42f9-b19f-d6b0458accd0'
-        self.request_url = "http://portalfront-test-61x-streamapp.base61.devops.dtstack.cn/"
-        self.nodePid = 227
-        self.project_id = 19
+        self.Cookie = 'dt_expire_cycle=0; dt_user_id=1; dt_username=admin%40dtstack.com; dt_can_redirect=false; dt_tenant_id=1; dt_tenant_name=DT_demo; dt_is_tenant_admin=true; dt_is_tenant_creator=false; sysLoginType=%7B%22sysType%22%3A0%2C%22sysId%22%3A1%2C%22sysName%22%3A%22UIC%u8D26%u53F7%u767B%u5F55%22%7D; dt_cookie_time=2023-11-05+14%3A05%3A48; dt_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIxIiwidXNlcl9pZCI6IjEiLCJ1c2VyX25hbWUiOiJhZG1pbkBkdHN0YWNrLmNvbSIsImV4cCI6MTY5OTQyMzU0OCwiaWF0IjoxNjk4OTA1MTQ4fQ.lw_I7WRRmAec9ZDwQvjIJK0HLe6abboiuF8iQToKvrQ; JSESSIONID=7C8E8335D11CE1D2EBD65CC0FFB4E131; DT_SESSION_ID=4a5b98ae-6470-467d-80ec-e6d89892dddc'
+        # 请求头中Cookie参数
+        self.request_url = "http://uic.dttestenv.cn/"     # 切换不同环境需要修改
+        self.nodePid = 1245    # getCatalogue请求Body中nodePid参数
+        self.project_id = 97  # 请求头中X-Project-Id参数
         self.headers = {
             'Accept': '*/*',
             'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -32,7 +33,7 @@ class cataLogue():
         }
         self.new_body = None
         self.new_list = None
-        self.current_path = '/Users/four/Downloads/four_git/jenkins-tools/jenkins-tools/streamOutput/test_6.1/实时迭代612'
+        self.current_path = '/Users/four/Downloads/four_git/jenkins-tools/jenkins-tools/streamOutput/test_6.0/实时迭代613_1'  # 项目输出位置
         self.cp_flink_task = []
 
     def getCatalogue(self, nodePid=None):
